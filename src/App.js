@@ -6,17 +6,29 @@ import './App.css';
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleToggleCLick = this.handleToggleCLick.bind(this);
+    }
+
+    handleToggleCLick() {
+        const edit = document.querySelector('.edit-page');
+        const preview = document.querySelector('.preview-page');
+        edit.classList.toggle('hide');
+        preview.classList.toggle('show');
     }
 
     render() {
         return(
             <>
             <div 
-            className='main-toggle'>
+            className='main-toggle'
+            onClick={()=>{this.handleToggleCLick()}}>
                 X
             </div>
-            <EditPage/>
-            <PreviewPage/>
+            <EditPage>
+            </EditPage>
+            <PreviewPage>
+            </PreviewPage>
             </>
         )
     }

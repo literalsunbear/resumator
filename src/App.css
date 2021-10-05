@@ -3,6 +3,10 @@ body, html {
   margin: 0;
   background: black;
 }
+html {
+  overflow-x: hidden;
+
+}
 #root {
   position: relative;
   height: 100%;
@@ -14,7 +18,39 @@ body, html {
 .preview-page {
   width: 595px;
   min-height: 842px;
-  margin: 0 auto;
 
   background: white;
+}
+.main-toggle {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  right: 0; 
+  z-index: 3;
+
+  background: green;
+}
+
+.edit-page {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.edit-page.hide {
+  left: -100%;
+}
+.preview-page {
+  position: absolute;
+  left: 100%;
+}
+.preview-page.show {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.edit-page,
+.edit-page-hide,
+.preview-page,
+.preview-page.show {
+  transition: all 500ms ease-in-out;
 }
