@@ -6,6 +6,32 @@ import './App.css';
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            name: '',
+            title: '',
+            summary: '',
+            contact: {
+                phone: '',
+                addressOne: '',
+                addressTwo: '',
+                email: ''
+            },
+            skills: [],
+            technologies: [],
+            experience: {
+                expCompany: [],
+                expTitle: [],
+                expDatesWorked: [],
+                expDescription: []
+            },
+            education: {
+                edInstitution: [],
+                edFocus: [],
+                edDatesAttended: [],
+                edDegreeEarned: [],
+                edDescription: []
+            }
+        }
 
         this.handleToggleCLick = this.handleToggleCLick.bind(this);
     }
