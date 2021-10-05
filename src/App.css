@@ -21,15 +21,16 @@ html {
 
   background: white;
 }
-.main-toggle {
+
+.edit-page-toggle-btn,
+.preview-page-toggle-btn {
   position: absolute;
   height: 100px;
   width: 100px;
   top: 0;
-  right: 0; 
-  z-index: 3;
+  right: 0;
 
-  background: green;
+  background: red;
 }
 
 .edit-page {

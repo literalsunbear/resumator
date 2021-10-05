@@ -32,11 +32,17 @@ class App extends React.Component {
                 edDescription: []
             }
         }
-
-        this.handleToggleCLick = this.handleToggleCLick.bind(this);
+        this.handleEditPageToggle = this.handleEditPageToggle.bind(this);
+        this.handlePreviewPageToggle = this.handlePreviewPageToggle.bind(this);
     }
 
-    handleToggleCLick() {
+    handleEditPageToggle() {
+        const edit = document.querySelector('.edit-page');
+        const preview = document.querySelector('.preview-page');
+        edit.classList.toggle('hide');
+        preview.classList.toggle('show');
+    }
+    handlePreviewPageToggle() {
         const edit = document.querySelector('.edit-page');
         const preview = document.querySelector('.preview-page');
         edit.classList.toggle('hide');
@@ -46,15 +52,10 @@ class App extends React.Component {
     render() {
         return(
             <>
-            <div 
-            className='main-toggle'
-            onClick={()=>{this.handleToggleCLick()}}>
-                X
-            </div>
-            <EditPage>
-            </EditPage>
-            <PreviewPage>
-            </PreviewPage>
+            <EditPage
+            toggle={this.handleEditPageToggle}/>
+            <PreviewPage
+            toggle={this.handlePreviewPageToggle}/>
             </>
         )
     }

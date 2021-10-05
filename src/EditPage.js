@@ -9,6 +9,11 @@ class EditPage extends React.Component {
         return(
             <div className='edit-page'>
                 <h1>this is the edit page</h1>
+                <div
+                className='edit-page-toggle-btn'
+                onClick={this.props.toggle}>
+                    preview
+                </div>
             </div>
         )
     }
