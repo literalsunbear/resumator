@@ -28,11 +28,14 @@ html {
   height: 100px;
   width: 100px;
   top: 0;
-  right: 0;
+  right: -100px;
 
   background: red;
 }
-
+.edit-page,
+.preview-page {
+  top: 25px;
+}
 .edit-page {
   position: absolute;
   left: 50%;
@@ -54,4 +57,12 @@ html {
 .preview-page,
 .preview-page.show {
   transition: all 500ms ease-in-out;
+}
+
+/* EDIT PAGE ************************/
+/* hero form */
+.edit-hero-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
