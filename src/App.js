@@ -8,7 +8,7 @@ class App extends React.Component {
         this.state = {
             name: '',
             title: '',
-            avi: [],
+            avi: '',
             summary: '',
             contact: {
                 phone: '',
@@ -61,8 +61,7 @@ class App extends React.Component {
         this.setState({ title: e.target.value });
     }
     handleEditAviChange(e) {
-        const image = e.target.files[0];
-        this.setState({ avi: image });
+        this.setState({ avi: URL.createObjectURL(e.target.files[0]) })
     }
 
     render() {

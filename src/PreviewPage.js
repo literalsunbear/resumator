@@ -19,8 +19,8 @@ class PreviewPage extends React.Component {
             className='preview-hero-container'>
                 <h1>{this.props.name}</h1>
                 <h2>{this.props.title}</h2>
-                <image
-                src={this.props.avi}></image>
+                <img
+                src={this.props.avi}></img>
             </div>
         </div>
         )
