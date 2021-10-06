@@ -13,7 +13,15 @@ class PreviewPage extends React.Component {
                 className='preview-page-toggle-btn'
                 onClick={this.props.toggle}>
                     edit
-                </div>
+            </div>
+            {/* rendered CV */}
+            <div
+            className='preview-hero-container'>
+                <h1>{this.props.name}</h1>
+                <h2>{this.props.title}</h2>
+                <image
+                src={this.props.avi}></image>
+            </div>
         </div>
         )
     }

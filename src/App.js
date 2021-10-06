@@ -8,6 +8,7 @@ class App extends React.Component {
         this.state = {
             name: '',
             title: '',
+            avi: [],
             summary: '',
             contact: {
                 phone: '',
@@ -35,6 +36,8 @@ class App extends React.Component {
         this.handleEditPageToggle = this.handleEditPageToggle.bind(this);
         this.handlePreviewPageToggle = this.handlePreviewPageToggle.bind(this);
         this.handleEditNameChange = this.handleEditNameChange.bind(this);
+        this.handleEditTitleChange = this.handleEditTitleChange.bind(this);
+        this.handleEditAviChange = this.handleEditAviChange.bind(this);
     }
 
     handleEditPageToggle() {
@@ -56,6 +59,10 @@ class App extends React.Component {
     }
     handleEditTitleChange(e) {
         this.setState({ title: e.target.value });
+    }
+    handleEditAviChange(e) {
+        const image = e.target.files[0];
+        this.setState({ avi: image });
     }
 
     render() {
@@ -82,13 +89,17 @@ class App extends React.Component {
                     <label for='avi-input'>Choose a Headshot: </label>
                     <input
                     type='file'
-                    name='avi-input'></input>
+                    name='avi-input'
+                    onChange={this.handleEditAviChange}></input>
                 </div>
 
 
             </div>
             <PreviewPage
-            toggle={this.handlePreviewPageToggle}/>
+            toggle={this.handlePreviewPageToggle}
+            name={this.state.name}
+            title={this.state.title}
+            avi={this.state.avi}/>
             </>
         )
     }
