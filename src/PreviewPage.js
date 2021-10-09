@@ -21,6 +21,21 @@ class PreviewPage extends React.Component {
                 <img
                 src={this.props.avi}></img>
             </div>
+
+            <div
+            className='preview-main-content-container'>
+                <div
+                className='preview-left-column'>
+
+                </div>
+
+                <div
+                className='preview-right-column'>
+
+                </div>
+
+            </div>
+
         </div>
         )
     }

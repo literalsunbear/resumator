@@ -100,3 +100,35 @@ html {
 
   background: gray;
 }
+/* main content */
+.preview-main-content-container {
+  position: absolute;
+  top: 225px;
+  right: 40px;
+  bottom: 0;
+  left: 40px;
+
+  border: 1px solid blue;
+}
+/* left column*/
+.preview-left-column {
+  position: absolute;
+
+  width: 33%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  border: 1px solid green;
+}
+/* right column */
+.preview-right-column {
+  position: absolute;
+
+  width: 66%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  border: 1px solid pink;
+}
