@@ -66,3 +66,37 @@ html {
   flex-direction: column;
   width: 50%;
 }
+
+/* PREVIEW PAGE *********************/
+/* hero container */
+.preview-hero-container {
+  position: relative;
+  height: 150px;
+  width: 100%;
+
+  border: 1px solid red;
+}
+
+.preview-hero-container h1 {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+}
+.preview-hero-container h2 {
+  position: absolute;
+  top: 75%;
+  right: 40px;
+  transform: translateY(-50%);
+}
+
+.preview-hero-container img {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  top: 50%;
+  left: 40px;
+
+  background: gray;
+}
