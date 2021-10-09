@@ -103,10 +103,11 @@ html {
 /* main content */
 .preview-main-content-container {
   position: absolute;
-  top: 225px;
+  top: 150px;
   right: 40px;
   bottom: 0;
   left: 40px;
+  z-index: -1;
 
   border: 1px solid blue;
 }
@@ -114,19 +115,36 @@ html {
 .preview-left-column {
   position: absolute;
 
-  width: 33%;
-  top: 0;
+  width: calc(33% - 20px);
+  top: 115px;
   left: 0;
   bottom: 0;
 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
   border: 1px solid green;
+}
+
+.preview-skills-container {
+  height: 150px;
+  width: 100%;
+
+  background: lightgray;
+}
+.preview-tech-container {
+  height: 150px;
+  width: 100%;
+
+  background: lightgray;
 }
 /* right column */
 .preview-right-column {
   position: absolute;
 
-  width: 66%;
-  top: 0;
+  width: calc(66% - 20px);
+  top: 40px;
   right: 0;
   bottom: 0;
 

@@ -26,7 +26,14 @@ class PreviewPage extends React.Component {
             className='preview-main-content-container'>
                 <div
                 className='preview-left-column'>
+                    <div
+                    className='preview-skills-container'>
 
+                    </div>
+                    <div
+                    className='preview-tech-container'>
+
+                    </div>
                 </div>
 
                 <div
