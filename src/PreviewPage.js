@@ -19,8 +19,13 @@ class PreviewPage extends React.Component {
             className='preview-hero-container'>
                 <h1>{this.props.name}</h1>
                 <h2>{this.props.title}</h2>
-                <img
-                src={this.props.avi}></img>
+                <div
+                className='preview-hero-avi'
+                style={{ 
+                    backgroundImage: `url(${this.props.avi})`,
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover' }}></div>
             </div>
             {/* main content */}
             <div
@@ -30,9 +35,11 @@ class PreviewPage extends React.Component {
                 className='preview-left-column'>
                     <div
                     className='preview-skills-container'>
+                        <h3>skills</h3>
                     </div>
                     <div
                     className='preview-tech-container'>
+                        <h3>technology</h3>
                     </div>
                 </div>
                 {/* summary, contact, exp, edu */}
@@ -55,6 +62,11 @@ class PreviewPage extends React.Component {
                         className='preview-phone-container'>
                             <h3>phone</h3>
                             <p>{this.props.phone}</p>
+                        </div>
+                        <div
+                        className='preview-email-container'>
+                            <h3>email</h3>
+                            <p>{this.props.email}</p>
                         </div>
                     </div>
                 </div>

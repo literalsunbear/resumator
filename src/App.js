@@ -43,6 +43,7 @@ class App extends React.Component {
         this.handleAddr1Change = this.handleAddr1Change.bind(this);
         this.handleAddr2Change = this.handleAddr2Change.bind(this);
         this.handlePhoneChange = this.handlePhoneChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
     }
 
     handleEditPageToggle() {
@@ -77,6 +78,9 @@ class App extends React.Component {
     }
     handlePhoneChange(e) {
         this.setState({ phone: e.target.value })
+    }
+    handleEmailChange(e) {
+        this.setState({ email: e.target.value })
     }
     render() {
         return(
@@ -139,7 +143,8 @@ class App extends React.Component {
                     <label for='email-input'>Email:</label>
                     <input
                     type='email'
-                    name='email-input'>
+                    name='email-input'
+                    onChange={this.handleEmailChange}>
                     </input>
                 </div>
 
@@ -153,7 +158,8 @@ class App extends React.Component {
             summary={this.state.summary}
             addr1={this.state.addressOne}
             addr2={this.state.addressTwo}
-            phone={this.state.phone}/>
+            phone={this.state.phone}
+            email={this.state.email}/>
             </>
         )
     }

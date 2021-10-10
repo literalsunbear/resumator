@@ -102,13 +102,17 @@ html {
   transform: translateY(-50%);
 }
 
-.preview-hero-container img {
+.preview-hero-avi{
   position: absolute;
   height: 150px;
   width: 150px;
   border-radius: 50%;
   top: 50%;
   left: 40px;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   background: gray;
 }
@@ -171,5 +175,9 @@ html {
 }
 /* phone */
 .preview-phone-container {
+  background: lightgray;
+}
+/* email */
+.preview-email-container {
   background: lightgray;
 }
