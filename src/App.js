@@ -38,6 +38,8 @@ class App extends React.Component {
         this.handleEditNameChange = this.handleEditNameChange.bind(this);
         this.handleEditTitleChange = this.handleEditTitleChange.bind(this);
         this.handleEditAviChange = this.handleEditAviChange.bind(this);
+
+        this.handleSummaryChange = this.handleSummaryChange.bind(this);
     }
 
     handleEditPageToggle() {
@@ -45,8 +47,6 @@ class App extends React.Component {
         const preview = document.querySelector('.preview-page');
         edit.classList.toggle('hide');
         preview.classList.toggle('show');
-
-        alert(`hey there, ${this.state.name}!`)
     }
     handlePreviewPageToggle() {
         const edit = document.querySelector('.edit-page');
@@ -62,6 +62,9 @@ class App extends React.Component {
     }
     handleEditAviChange(e) {
         this.setState({ avi: URL.createObjectURL(e.target.files[0]) })
+    }
+    handleSummaryChange(e) {
+        this.setState({ summary: e.target.value })
     }
 
     render() {
@@ -92,13 +95,24 @@ class App extends React.Component {
                     onChange={this.handleEditAviChange}></input>
                 </div>
 
+                {/* summary section */}
+                <div
+                className='edit-summary-form'>
+                    <label for='summary-input'>Summarize Yourself: </label>
+                    <textarea 
+                    name='summary-input'
+                    onChange={this.handleSummaryChange}></textarea>
+                </div>
+
 
             </div>
             <PreviewPage
             toggle={this.handlePreviewPageToggle}
             name={this.state.name}
             title={this.state.title}
-            avi={this.state.avi}/>
+            avi={this.state.avi}
+            
+            summary={this.state.summary}/>
             </>
         )
     }

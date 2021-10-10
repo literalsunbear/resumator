@@ -14,6 +14,7 @@ class PreviewPage extends React.Component {
                     edit
             </div>
             {/* rendered CV */}
+            {/* name, title, avi */}
             <div
             className='preview-hero-container'>
                 <h1>{this.props.name}</h1>
@@ -21,24 +22,27 @@ class PreviewPage extends React.Component {
                 <img
                 src={this.props.avi}></img>
             </div>
-
+            {/* main content */}
             <div
             className='preview-main-content-container'>
+                {/* skills, tech */}
                 <div
                 className='preview-left-column'>
                     <div
                     className='preview-skills-container'>
-
                     </div>
                     <div
                     className='preview-tech-container'>
-
                     </div>
                 </div>
-
+                {/* summary, contact, exp, edu */}
                 <div
                 className='preview-right-column'>
-
+                    <div
+                    className='preview-summary-container'>
+                        <h3>summary</h3>
+                        <p>{this.props.summary}</p>
+                    </div>
                 </div>
 
             </div>

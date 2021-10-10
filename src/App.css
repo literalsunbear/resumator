@@ -66,6 +66,12 @@ html {
   flex-direction: column;
   width: 50%;
 }
+.edit-summary-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
 
 /* PREVIEW PAGE *********************/
 /* hero container */
