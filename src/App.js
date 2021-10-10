@@ -42,6 +42,7 @@ class App extends React.Component {
         this.handleSummaryChange = this.handleSummaryChange.bind(this);
         this.handleAddr1Change = this.handleAddr1Change.bind(this);
         this.handleAddr2Change = this.handleAddr2Change.bind(this);
+        this.handlePhoneChange = this.handlePhoneChange.bind(this);
     }
 
     handleEditPageToggle() {
@@ -73,6 +74,9 @@ class App extends React.Component {
     }
     handleAddr2Change(e) {
         this.setState({ addressTwo: e.target.value })
+    }
+    handlePhoneChange(e) {
+        this.setState({ phone: e.target.value })
     }
     render() {
         return(
@@ -129,7 +133,8 @@ class App extends React.Component {
                     <label for='number-input'>Phone:</label>
                     <input
                     type='text'
-                    name='number-input'>
+                    name='number-input'
+                    onChange={this.handlePhoneChange}>
                     </input>
                     <label for='email-input'>Email:</label>
                     <input
@@ -147,7 +152,8 @@ class App extends React.Component {
             
             summary={this.state.summary}
             addr1={this.state.addressOne}
-            addr2={this.state.addressTwo}/>
+            addr2={this.state.addressTwo}
+            phone={this.state.phone}/>
             </>
         )
     }

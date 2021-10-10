@@ -165,3 +165,11 @@ html {
 .preview-summary-container {
   background: lightgray;
 }
+/* address */
+.preview-address-container {
+  background: lightgray;
+}
+/* phone */
+.preview-phone-container {
+  background: lightgray;
+}

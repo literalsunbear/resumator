@@ -51,6 +51,11 @@ class PreviewPage extends React.Component {
                             <p>{this.props.addr1}</p>
                             <p>{this.props.addr2}</p>
                         </div>
+                        <div
+                        className='preview-phone-container'>
+                            <h3>phone</h3>
+                            <p>{this.props.phone}</p>
+                        </div>
                     </div>
                 </div>
 
