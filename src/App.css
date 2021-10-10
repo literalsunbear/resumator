@@ -66,11 +66,17 @@ html {
   flex-direction: column;
   width: 50%;
 }
+/* summary form */
 .edit-summary-form {
   display: flex;
   flex-direction: column;
   width: 50%;
-  
+}
+/* contact form */
+.edit-contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 /* PREVIEW PAGE *********************/
@@ -154,4 +160,8 @@ html {
   bottom: 0;
 
   border: 1px solid pink;
+}
+/* summary */
+.preview-summary-container {
+  background: lightgray;
 }

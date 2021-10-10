@@ -40,6 +40,8 @@ class App extends React.Component {
         this.handleEditAviChange = this.handleEditAviChange.bind(this);
 
         this.handleSummaryChange = this.handleSummaryChange.bind(this);
+        this.handleAddr1Change = this.handleAddr1Change.bind(this);
+        this.handleAddr2Change = this.handleAddr2Change.bind(this);
     }
 
     handleEditPageToggle() {
@@ -66,7 +68,12 @@ class App extends React.Component {
     handleSummaryChange(e) {
         this.setState({ summary: e.target.value })
     }
-
+    handleAddr1Change(e) {
+        this.setState({ addressOne: e.target.value })
+    }
+    handleAddr2Change(e) {
+        this.setState({ addressTwo: e.target.value })
+    }
     render() {
         return(
             <>
@@ -104,6 +111,32 @@ class App extends React.Component {
                     onChange={this.handleSummaryChange}></textarea>
                 </div>
 
+                {/* contact section */}
+                <div
+                className='edit-contact-form'>
+                    <label for='addr1-input'>Address 1:</label>
+                    <input
+                    type='text'
+                    name='addr1-input'
+                    onChange={this.handleAddr1Change}>
+                    </input>
+                    <label for='addr2-input'>Address 2:</label>
+                    <input
+                    type='text'
+                    name='addr2-input'
+                    onChange={this.handleAddr2Change}>
+                    </input>
+                    <label for='number-input'>Phone:</label>
+                    <input
+                    type='text'
+                    name='number-input'>
+                    </input>
+                    <label for='email-input'>Email:</label>
+                    <input
+                    type='email'
+                    name='email-input'>
+                    </input>
+                </div>
 
             </div>
             <PreviewPage
@@ -112,7 +145,9 @@ class App extends React.Component {
             title={this.state.title}
             avi={this.state.avi}
             
-            summary={this.state.summary}/>
+            summary={this.state.summary}
+            addr1={this.state.addressOne}
+            addr2={this.state.addressTwo}/>
             </>
         )
     }
