@@ -1,6 +1,7 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
 import Skills from './Skills';
+import Tech from './Tech';
 import './App.css';
 
 class App extends React.Component {
@@ -22,7 +23,10 @@ class App extends React.Component {
                 'hanging out',
                 'being generally very cool'
             ],
-            technologies: [],
+            tech: [
+                'hammer',
+                'nail'
+            ],
             experience: {
                 expCompany: [],
                 expTitle: [],
@@ -166,7 +170,11 @@ class App extends React.Component {
                     </div>
                     <div
                     className='edit-tech-container'>
+                        <div
+                        className='edit-tech-add-btn'></div>
                         <h3>tech</h3>
+                        <Tech
+                        tech={this.state.tech}/>
                     </div>
                 </div>
 
