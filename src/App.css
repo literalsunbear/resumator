@@ -78,6 +78,12 @@ html {
   flex-direction: column;
   width: 50%;
 }
+/* skills and tech */
+.edit-skills-tech-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
 
 /* PREVIEW PAGE *********************/
 /* hero container */

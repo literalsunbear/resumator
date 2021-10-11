@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
+import Skills from './Skills';
 import './App.css';
 
 class App extends React.Component {
@@ -16,7 +17,11 @@ class App extends React.Component {
                 addressTwo: '',
                 email: ''
             },
-            skills: [],
+            skills: [
+                'eating sandwiches',
+                'hanging out',
+                'being generally very cool'
+            ],
             technologies: [],
             experience: {
                 expCompany: [],
@@ -146,6 +151,23 @@ class App extends React.Component {
                     name='email-input'
                     onChange={this.handleEmailChange}>
                     </input>
+                </div>
+
+                {/* skills and tech */}
+                <div
+                className='edit-skills-tech-container'>
+                    <div
+                    className='edit-skills-container'>
+                        <div
+                        className='edit-skills-add-btn'></div>
+                        <h3>skills</h3>
+                        <Skills
+                        skills={this.state.skills}/>
+                    </div>
+                    <div
+                    className='edit-tech-container'>
+                        <h3>tech</h3>
+                    </div>
                 </div>
 
             </div>
