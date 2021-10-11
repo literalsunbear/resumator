@@ -15,7 +15,8 @@ class Skills extends React.Component {
                     key={skill}>
                         <div
                         className='edit-skills-delete-btn'>X</div>
-                        <p>{skill}</p>
+                        <input
+                        placeholder={skill}></input>
                     </li>
                 )}
             </ul>

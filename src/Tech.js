@@ -15,7 +15,8 @@ class Tech extends React.Component {
                     key={technology}>
                         <div
                         className='edit-tech-delete-btn'>X</div>
-                        <p>{technology}</p>
+                        <input
+                        placeholder={technology}></input>
                     </li>
                 )}
             </ul>
