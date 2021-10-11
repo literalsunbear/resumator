@@ -10,7 +10,9 @@ class Skills extends React.Component {
             <ul
             className='edit-skills-list'>
                 {this.props.skills.map(skill => 
-                    <li>
+                    <li
+                    className='edit-page-skill'
+                    key={skill}>
                         <div
                         className='edit-skills-delete-btn'>X</div>
                         <p>{skill}</p>

@@ -10,7 +10,9 @@ class Tech extends React.Component {
             <ul
             className='edit-tech-list'>
                 {this.props.tech.map(technology => 
-                    <li>
+                    <li
+                    className='edit-page-tech'
+                    key={technology}>
                         <div
                         className='edit-tech-delete-btn'>X</div>
                         <p>{technology}</p>
