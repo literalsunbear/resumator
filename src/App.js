@@ -1,6 +1,5 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
-import Skill from './Skill';
 import './App.css';
 
 class App extends React.Component {
@@ -162,8 +161,7 @@ class App extends React.Component {
                         return(
                             <div
                             className='edit-page-skill'>
-                                <Skill 
-                                skill={skill}/>
+                                <p>{skill}</p>
                                 <div
                                 className='skill-edit-btn'>
                                     [edit]
