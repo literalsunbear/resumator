@@ -63,7 +63,7 @@ html {
 .preview-page.show {
   transition: all 500ms ease-in-out;
 }
-
+/************************************/
 /* EDIT PAGE ************************/
 /* hero form */
 .edit-hero-form {
@@ -94,7 +94,13 @@ html {
   list-style: none;
   padding: 0;
 }
-
+/* skills */
+.edit-page-skill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/************************************/
 /* PREVIEW PAGE *********************/
 /* hero container */
 .preview-hero-container {

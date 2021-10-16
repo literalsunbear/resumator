@@ -163,10 +163,6 @@ class App extends React.Component {
                             className='edit-page-skill'>
                                 <p>{skill}</p>
                                 <div
-                                className='skill-edit-btn'>
-                                    [edit]
-                                </div>
-                            <div
                                 className='skill-delete-btn'>
                                     [delete]
                                 </div>
@@ -174,7 +170,7 @@ class App extends React.Component {
                         )
                     })}
                     <div
-                    className='edit-skills-add'>+</div>
+                    className='edit-skills-add'>[add]</div>
                 </div>
 
             </div>
