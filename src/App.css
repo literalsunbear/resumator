@@ -28,9 +28,14 @@ html {
   height: 100px;
   width: 100px;
   top: 0;
-  right: -100px;
 
   background: red;
+}
+.edit-page-toggle-btn {
+  right: -100px;
+}
+.preview-page-toggle-btn {
+  left: -100px;
 }
 .edit-page,
 .preview-page {
@@ -46,7 +51,7 @@ html {
 }
 .preview-page {
   position: absolute;
-  left: 100%;
+  left: calc(100% + 100px);
 }
 .preview-page.show {
   left: 50%;

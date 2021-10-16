@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
+import Skill from './Skill';
 import './App.css';
 
 class App extends React.Component {
@@ -16,7 +17,11 @@ class App extends React.Component {
                 addressTwo: '',
                 email: ''
             },
-            skills: [],
+            skills: [
+                'version control',
+                'agile / SCRUM',
+                'test-driven development'
+            ],
             technologies: [],
             experience: {
                 expCompany: [],
@@ -146,6 +151,32 @@ class App extends React.Component {
                     name='email-input'
                     onChange={this.handleEmailChange}>
                     </input>
+                </div>
+
+                {/* skills section */}
+                <div
+                className='edit-skills-section'>
+                    <p
+                    className='edit-skills-section-label'>Skills:</p>
+                    {this.state.skills.map(skill => {
+                        return(
+                            <div
+                            className='edit-page-skill'>
+                                <Skill 
+                                skill={skill}/>
+                                <div
+                                className='skill-edit-btn'>
+                                    [edit]
+                                </div>
+                            <div
+                                className='skill-delete-btn'>
+                                    [delete]
+                                </div>
+                            </div>
+                        )
+                    })}
+                    <div
+                    className='edit-skills-add'>+</div>
                 </div>
 
             </div>
