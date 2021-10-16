@@ -83,6 +83,17 @@ html {
   flex-direction: column;
   width: 50%;
 }
+/* skills and tech */
+.edit-skills-tech-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.edit-skills-list,
+.edit-tech-list {
+  list-style: none;
+  padding: 0;
+}
 
 /* PREVIEW PAGE *********************/
 /* hero container */
