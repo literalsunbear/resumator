@@ -26,19 +26,25 @@ class App extends React.Component {
                 'CSS',
                 'Javascript'
             ],
-            experience: {
-                expCompany: [],
-                expTitle: [],
-                expDatesWorked: [],
-                expDescription: []
-            },
-            education: {
-                edInstitution: [],
-                edFocus: [],
-                edDatesAttended: [],
-                edDegreeEarned: [],
-                edDescription: []
-            }
+            experience: [
+                {
+                id: 1,
+                expCompany: '',
+                expTitle: '',
+                expDatesWorked: '',
+                expDescription: ''
+                }
+            ],
+            education: [
+                {
+                id: 1,
+                edInstitution: '',
+                edFocus: '',
+                edDatesAttended: '',
+                edDegreeEarned: '',
+                edDescription: ''
+                }
+            ]
         }
 
         this.handleEditPageToggle = this.handleEditPageToggle.bind(this);
