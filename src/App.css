@@ -84,22 +84,24 @@ html {
   width: 50%;
 }
 /* skills and tech */
-.edit-skills-tech-container {
+.skills-tech-container {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .edit-skills-list,
 .edit-tech-list {
   list-style: none;
   padding: 0;
 }
-.edit-page-skill {
+.edit-page-skill,
+.edit-page-technology {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.edit-skills-add {
+.edit-skills-add,
+.edit-tech-add {
   display: flex;
   align-items: center;
   gap: 10px;

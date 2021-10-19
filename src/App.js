@@ -21,7 +21,11 @@ class App extends React.Component {
                 'agile / SCRUM',
                 'test-driven development'
             ],
-            technologies: [],
+            tech: [
+                'HTML',
+                'CSS',
+                'Javascript'
+            ],
             experience: {
                 expCompany: [],
                 expTitle: [],
@@ -105,6 +109,23 @@ class App extends React.Component {
         }
         el.value = '';
     }
+    // tech fxns
+    handleDeleteTech(technology) {
+        let arr = this.state.tech;
+        arr = arr.filter(e => e !== technology);
+        this.setState({ tech: arr });
+    }
+    handleAddTech() {
+        const el = document.querySelector('#tech-add-input');
+        let arr = this.state.tech;
+        if(el.value) {
+            arr.push(el.value);
+            this.setState({ tech: arr });
+        } else {
+            alert('Please provide a technology in the input field');
+        }
+        el.value = '';
+    }
     render() {
         return(
             <>
@@ -171,36 +192,74 @@ class App extends React.Component {
                     </input>
                 </div>
 
-                {/* skills section */}
+                {/* SKILLS AND TECHNOLOGY */}
                 <div
-                className='edit-skills-section'>
-                    <p
-                    className='edit-skills-section-label'>Skills:</p>
-                    {this.state.skills.map(skill => {
-                        return(
-                            <div
-                            className='edit-page-skill'>
-                                <p>{skill}</p>
-                                <div
-                                className='skill-delete-btn'
-                                onClick={()=>{this.handleDeleteSkill(skill)}}>
-                                    [delete]
-                                </div>
-                            </div>
-                        )
-                    })}
+                className='skills-tech-container'>
+                    {/* skills section */}
                     <div
-                    className='edit-skills-add'>
-                        <input
-                        type='text'
-                        id='skill-add-input'
-                        onChange={this.handleAddSkillChange}></input>
+                    className='edit-skills-section'>
+                        <p
+                        className='edit-skills-section-label'>Skills:</p>
+                        {this.state.skills.map(skill => {
+                            return(
+                                <div
+                                className='edit-page-skill'>
+                                    <div
+                                    className='skill-delete-btn'
+                                    onClick={()=>{this.handleDeleteSkill(skill)}}>
+                                        [delete]
+                                    </div>
+                                    <p>{skill}</p>
+                                </div>
+                            )
+                        })}
                         <div
-                        className='skill-add-btn'
-                        onClick={()=>{this.handleAddSkill()}}>[add]</div>           
+                        className='edit-skills-add'>
+                                                        <div
+                            className='skill-add-btn'
+                            onClick={()=>{this.handleAddSkill()}}>[add]</div> 
+                            <input
+                            type='text'
+                            id='skill-add-input'
+                            onChange={this.handleAddSkillChange}></input>
+                        </div>
+                        
                     </div>
-                    
+
+                    {/* tech section */}
+                    <div
+                    className='edit-tech-section'>
+                        <p
+                        className='edit-tech-section-label'>Technology:</p>
+                        {this.state.tech.map(technology => {
+                            return(
+                                <div
+                                className='edit-page-technology'>
+                                    <div
+                                    className='skill-delete-btn'
+                                    onClick={()=>{this.handleDeleteTech(technology)}}>
+                                        [delete]
+                                    </div>
+                                    <p>{technology}</p>
+                                </div>
+                            )
+                        })}
+                        <div
+                        className='edit-tech-add'>
+                            <div
+                            className='tech-add-btn'
+                            onClick={()=>{this.handleAddTech()}}>[add]</div> 
+                            <input
+                            type='text'
+                            id='tech-add-input'
+                            onChange={this.handleAddSkillChange}></input>
+          
+                        </div>
+                        
+                    </div>
                 </div>
+
+
 
             </div>
             <PreviewPage
