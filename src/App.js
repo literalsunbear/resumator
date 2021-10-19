@@ -62,6 +62,7 @@ class App extends React.Component {
         edit.classList.toggle('hide');
         preview.classList.toggle('show');
     }
+    // header fxns
     handleEditNameChange(e) {
         this.setState({ name: e.target.value });
     }
@@ -71,6 +72,7 @@ class App extends React.Component {
     handleEditAviChange(e) {
         this.setState({ avi: URL.createObjectURL(e.target.files[0]) })
     }
+    // basic info fxns
     handleSummaryChange(e) {
         this.setState({ summary: e.target.value })
     }
@@ -85,6 +87,23 @@ class App extends React.Component {
     }
     handleEmailChange(e) {
         this.setState({ email: e.target.value })
+    }
+    // skills fxns
+    handleDeleteSkill(skill) {
+        let arr = this.state.skills;
+        arr = arr.filter(e => e !== skill);
+        this.setState({ skills: arr });
+    }
+    handleAddSkill() {
+        const el = document.querySelector('#skill-add-input');
+        let arr = this.state.skills;
+        if(el.value) {
+            arr.push(el.value);
+            this.setState({ skills: arr });
+        } else {
+            alert('Please provide a skill in the input field');
+        }
+        el.value = '';
     }
     render() {
         return(
@@ -163,14 +182,24 @@ class App extends React.Component {
                             className='edit-page-skill'>
                                 <p>{skill}</p>
                                 <div
-                                className='skill-delete-btn'>
+                                className='skill-delete-btn'
+                                onClick={()=>{this.handleDeleteSkill(skill)}}>
                                     [delete]
                                 </div>
                             </div>
                         )
                     })}
                     <div
-                    className='edit-skills-add'>[add]</div>
+                    className='edit-skills-add'>
+                        <input
+                        type='text'
+                        id='skill-add-input'
+                        onChange={this.handleAddSkillChange}></input>
+                        <div
+                        className='skill-add-btn'
+                        onClick={()=>{this.handleAddSkill()}}>[add]</div>           
+                    </div>
+                    
                 </div>
 
             </div>

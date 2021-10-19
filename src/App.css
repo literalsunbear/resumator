@@ -94,8 +94,12 @@ html {
   list-style: none;
   padding: 0;
 }
-/* skills */
 .edit-page-skill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.edit-skills-add {
   display: flex;
   align-items: center;
   gap: 10px;
