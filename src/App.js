@@ -29,10 +29,12 @@ class App extends React.Component {
             experience: [
                 {
                 id: 1,
-                expCompany: '',
-                expTitle: '',
-                expDatesWorked: '',
-                expDescription: ''
+                expCompany: 'EXAMPLE COMPANY',
+                expTitle: 'Your Title',
+                expDatesWorked: '20XX - 20XX',
+                expDescription: 'You can add a short description' +
+                ' to outline some of your basic duties during your' +
+                ' tenure at this job.'
                 }
             ],
             education: [
@@ -141,7 +143,7 @@ class App extends React.Component {
                 onClick={()=>{this.handleEditPageToggle()}}>
                     preview
                 </div>
-                {/* name, title and headshot */}
+                {/* NAME/TITLE/HEADSHOT */}
                 <div className='edit-hero-form'>
                     <label for='name-input'>Your Name: </label>
                     <input
@@ -160,7 +162,7 @@ class App extends React.Component {
                     onChange={this.handleEditAviChange}></input>
                 </div>
 
-                {/* summary section */}
+                {/* SUMMARY */}
                 <div
                 className='edit-summary-form'>
                     <label for='summary-input'>Summarize Yourself: </label>
@@ -169,7 +171,7 @@ class App extends React.Component {
                     onChange={this.handleSummaryChange}></textarea>
                 </div>
 
-                {/* contact section */}
+                {/* CONTACT */}
                 <div
                 className='edit-contact-form'>
                     <label for='addr1-input'>Address 1:</label>
@@ -200,7 +202,7 @@ class App extends React.Component {
 
                 {/* SKILLS AND TECHNOLOGY */}
                 <div
-                className='skills-tech-container'>
+                className='edit-skills-tech-container'>
                     {/* skills section */}
                     <div
                     className='edit-skills-section'>
@@ -264,7 +266,33 @@ class App extends React.Component {
                         
                     </div>
                 </div>
-
+                
+                {/* EXPERIENCE */}
+                <div
+                className='edit-experience-container'>
+                    <p
+                    className='edit-experience-section-label'>Experience:</p>
+                    {this.state.experience.map(exp => {
+                        return(
+                            <div
+                            className='edit-page-exp'
+                            id={`edit-page-exp-${exp.id}`}>
+                                <input
+                                value={exp.expTitle}></input>
+                                <input
+                                value={exp.expCompany}></input>
+                                <input
+                                value={exp.expDatesWorked}></input>
+                                <textarea
+                                value={exp.expDescription}></textarea>
+                                <div
+                                className='exp-delete-btn'>[delete]</div>
+                            </div>
+                        )
+                    })}
+                    <div
+                    className='exp-add-btn'>[add]</div>
+                </div>
 
 
             </div>
