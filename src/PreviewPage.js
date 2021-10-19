@@ -74,22 +74,11 @@ class PreviewPage extends React.Component {
                     </div>
                     <div
                     className='preview-contact-container'>
-                        <div
-                        className='preview-address-container'>
-                            <h3>address</h3>
-                            <p>{this.props.addr1}</p>
-                            <p>{this.props.addr2}</p>
-                        </div>
-                        <div
-                        className='preview-phone-container'>
-                            <h3>phone</h3>
-                            <p>{this.props.phone}</p>
-                        </div>
-                        <div
-                        className='preview-email-container'>
-                            <h3>email</h3>
-                            <p>{this.props.email}</p>
-                        </div>
+                        <h3>contact</h3>
+                        <p>{this.props.addr1}</p>
+                        <p>{this.props.addr2}</p>
+                        <p>{this.props.phone}</p>
+                        <p>{this.props.email}</p>   
                     </div>
                 </div>
 

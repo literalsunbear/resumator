@@ -171,13 +171,11 @@ html {
 }
 
 .preview-skills-container {
-  height: 150px;
   width: 100%;
 
   background: lightgray;
 }
 .preview-tech-container {
-  height: 150px;
   width: 100%;
 
   background: lightgray;
@@ -197,15 +195,7 @@ html {
 .preview-summary-container {
   background: lightgray;
 }
-/* address */
-.preview-address-container {
-  background: lightgray;
-}
-/* phone */
-.preview-phone-container {
-  background: lightgray;
-}
-/* email */
-.preview-email-container {
+/* contact */
+.preview-contact-container {
   background: lightgray;
 }
