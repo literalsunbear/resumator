@@ -36,10 +36,32 @@ class PreviewPage extends React.Component {
                     <div
                     className='preview-skills-container'>
                         <h3>skills</h3>
+                        <ul
+                        className='preview-skills-list'>
+                            {this.props.skills.map(skill => {
+                                return(
+                                    <li
+                                    className='preview-skill-item'>
+                                        {skill}
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                     <div
                     className='preview-tech-container'>
                         <h3>technology</h3>
+                        <ul
+                        className='preview-tech-list'>
+                            {this.props.tech.map(tech => {
+                                return(
+                                    <li
+                                    className='preview-tech-item'>
+                                        {tech}
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </div>
                 {/* summary, contact, exp, edu */}

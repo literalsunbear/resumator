@@ -272,7 +272,10 @@ class App extends React.Component {
             addr1={this.state.addressOne}
             addr2={this.state.addressTwo}
             phone={this.state.phone}
-            email={this.state.email}/>
+            email={this.state.email}
+            
+            skills={this.state.skills}
+            tech={this.state.tech}/>
             </>
         )
     }
