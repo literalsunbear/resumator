@@ -30,10 +30,10 @@ class App extends React.Component {
             experience: [
                 {
                 id: 1,
-                expCompany: 'EXAMPLE COMPANY',
-                expTitle: 'Your Title',
-                expDatesWorked: '20XX - 20XX',
-                expDescription: 'You can add a short description' +
+                company: 'EXAMPLE COMPANY',
+                title: 'Your Title',
+                dates: '20XX - 20XX',
+                description: 'You can add a short description' +
                 ' to outline some of your basic duties during your' +
                 ' tenure at this job.'
                 }
@@ -41,11 +41,11 @@ class App extends React.Component {
             education: [
                 {
                 id: 1,
-                edInstitution: '',
-                edFocus: '',
-                edDatesAttended: '',
-                edDegreeEarned: '',
-                edDescription: ''
+                institution: '',
+                focus: '',
+                dates: '',
+                degree: '',
+                description: ''
                 }
             ],
         }
@@ -278,21 +278,18 @@ class App extends React.Component {
                             <div
                             className='edit-page-exp'
                             id={`edit-page-exp-${exp.id}`}>
-                                <input
-                                value={exp.expTitle}></input>
-                                <input
-                                value={exp.expCompany}></input>
-                                <input
-                                value={exp.expDatesWorked}></input>
-                                <textarea
-                                value={exp.expDescription}></textarea>
+                                <p>{exp.title}</p>
+                                <p>{exp.company}</p>
+                                <p>{exp.dates}</p>
+                                <p>{exp.description}</p>
                                 <div
                                 className='exp-delete-btn'>[delete]</div>
                                 <EditExpModal
-                                title={exp.expTitle}
-                                company={exp.expCompany}
-                                dates={exp.expDatesWorked}
-                                description={exp.expDescription}/>
+                                id={exp.id}
+                                title={exp.title}
+                                company={exp.company}
+                                dates={exp.dates}
+                                description={exp.description}/>
                             </div>
                         )
                     })}
@@ -315,7 +312,9 @@ class App extends React.Component {
             email={this.state.email}
             
             skills={this.state.skills}
-            tech={this.state.tech}/>
+            tech={this.state.tech}
+            
+            experience={this.state.experience}/>
             </>
         )
     }

@@ -8,10 +8,14 @@ class EditExpModal extends React.Component {
             show: false
         }
         this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
     showModal = () => {
         this.setState({show: true});
     };
+    hideModal = () => {
+        this.setState({show: false})
+    }
 
     render() {
         return(
@@ -21,7 +25,13 @@ class EditExpModal extends React.Component {
                 className='edit-exp-modal-btn'
                 onClick={this.showModal}>[edit]</div>
                 <EditExpModalWindow
-                show={this.state.show}/>
+                show={this.state.show}
+                hide={this.hideModal}
+                id={this.props.id}
+                title={this.props.title}
+                company={this.props.company}
+                dates={this.props.dates}
+                description={this.props.description}/>
             </div>
 
         )

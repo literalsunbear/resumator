@@ -80,6 +80,24 @@ class PreviewPage extends React.Component {
                         <p>{this.props.phone}</p>
                         <p>{this.props.email}</p>   
                     </div>
+                    <div
+                    className='preview-experience-container'>
+                        <h3>experience</h3>
+                        <ul
+                        className='preview-exp-list'>
+                            {this.props.experience.map(exp => {
+                                return(
+                                    <li
+                                    className='preview-exp-item'>
+                                        <p>{exp.company}</p>
+                                        <p>{exp.title}</p>
+                                        <p>{exp.dates}</p>
+                                        <p>{exp.description}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </div>
 
             </div>
