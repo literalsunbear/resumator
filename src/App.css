@@ -112,6 +112,12 @@ html {
   display: flex;
   flex-direction: column;
 }
+.display-block {
+  display: block;
+}
+.display-none {
+  display: none;
+}
 /************************************/
 /* PREVIEW PAGE *********************/
 /* hero container */

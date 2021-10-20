@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
+import EditExpModal from './EditExpModal';
 import './App.css';
 
 class App extends React.Component {
@@ -46,7 +47,7 @@ class App extends React.Component {
                 edDegreeEarned: '',
                 edDescription: ''
                 }
-            ]
+            ],
         }
 
         this.handleEditPageToggle = this.handleEditPageToggle.bind(this);
@@ -287,6 +288,11 @@ class App extends React.Component {
                                 value={exp.expDescription}></textarea>
                                 <div
                                 className='exp-delete-btn'>[delete]</div>
+                                <EditExpModal
+                                title={exp.expTitle}
+                                company={exp.expCompany}
+                                dates={exp.expDatesWorked}
+                                description={exp.expDescription}/>
                             </div>
                         )
                     })}
