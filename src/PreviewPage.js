@@ -1,10 +1,6 @@
 import React from 'react';
 
 class PreviewPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <div className='preview-page'>
@@ -41,6 +37,7 @@ class PreviewPage extends React.Component {
                             {this.props.skills.map(skill => {
                                 return(
                                     <li
+                                    key={skill}
                                     className='preview-skill-item'>
                                         {skill}
                                     </li>
@@ -56,6 +53,7 @@ class PreviewPage extends React.Component {
                             {this.props.tech.map(tech => {
                                 return(
                                     <li
+                                    key={tech}
                                     className='preview-tech-item'>
                                         {tech}
                                     </li>
@@ -88,6 +86,7 @@ class PreviewPage extends React.Component {
                             {this.props.experience.map(exp => {
                                 return(
                                     <li
+                                    key={exp.company}
                                     className='preview-exp-item'>
                                         <p>{exp.company}</p>
                                         <p>{exp.title}</p>

@@ -178,17 +178,17 @@ class App extends React.Component {
                 </div>
                 {/* NAME/TITLE/HEADSHOT */}
                 <div className='edit-hero-form'>
-                    <label for='name-input'>Your Name: </label>
+                    <label htmlFor='name-input'>Your Name: </label>
                     <input
                     type='text'
                     name='name-input'
                     onChange={this.handleEditNameChange}></input>
-                    <label for='title-input'>Your Title: </label>
+                    <label htmlFor='title-input'>Your Title: </label>
                     <input
                     type='text'
                     name='title-input'
                     onChange={this.handleEditTitleChange}></input>
-                    <label for='avi-input'>Choose a Headshot: </label>
+                    <label htmlFor='avi-input'>Choose a Headshot: </label>
                     <input
                     type='file'
                     name='avi-input'
@@ -198,7 +198,7 @@ class App extends React.Component {
                 {/* SUMMARY */}
                 <div
                 className='edit-summary-form'>
-                    <label for='summary-input'>Summarize Yourself: </label>
+                    <label htmlFor='summary-input'>Summarize Yourself: </label>
                     <textarea 
                     name='summary-input'
                     onChange={this.handleSummaryChange}></textarea>
@@ -207,25 +207,25 @@ class App extends React.Component {
                 {/* CONTACT */}
                 <div
                 className='edit-contact-form'>
-                    <label for='addr1-input'>Address 1:</label>
+                    <label htmlFor='addr1-input'>Address 1:</label>
                     <input
                     type='text'
                     name='addr1-input'
                     onChange={this.handleAddr1Change}>
                     </input>
-                    <label for='addr2-input'>Address 2:</label>
+                    <label htmlFor='addr2-input'>Address 2:</label>
                     <input
                     type='text'
                     name='addr2-input'
                     onChange={this.handleAddr2Change}>
                     </input>
-                    <label for='number-input'>Phone:</label>
+                    <label htmlFor='number-input'>Phone:</label>
                     <input
                     type='text'
                     name='number-input'
                     onChange={this.handlePhoneChange}>
                     </input>
-                    <label for='email-input'>Email:</label>
+                    <label htmlFor='email-input'>Email:</label>
                     <input
                     type='email'
                     name='email-input'
@@ -244,6 +244,7 @@ class App extends React.Component {
                         {this.state.skills.map(skill => {
                             return(
                                 <div
+                                key={skill}
                                 className='edit-page-skill'>
                                     <div
                                     className='skill-delete-btn'
@@ -275,6 +276,7 @@ class App extends React.Component {
                         {this.state.tech.map(technology => {
                             return(
                                 <div
+                                key={technology}
                                 className='edit-page-technology'>
                                     <div
                                     className='skill-delete-btn'
@@ -308,6 +310,7 @@ class App extends React.Component {
                     {this.state.experience.map(exp => {
                         return(
                             <div
+                            key={exp.company}
                             className='edit-page-exp'
                             id={`edit-page-exp-${exp.id}`}>
                                 <p className='edit-page-exp-item-company'>{exp.company}</p>
