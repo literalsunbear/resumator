@@ -125,6 +125,7 @@ html {
   display: flex;
   flex-direction: column;
 
+  background: white;
   border: 1px solid red;
 }
 /* functional modal css classes must live below

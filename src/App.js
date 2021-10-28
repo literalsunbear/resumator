@@ -29,7 +29,7 @@ class App extends React.Component {
             ],
             experience: [
                 {
-                id: 1,
+                id: '1',
                 company: 'EXAMPLE COMPANY',
                 title: 'Your Title',
                 dates: '20XX - 20XX',
@@ -40,7 +40,7 @@ class App extends React.Component {
             ],
             education: [
                 {
-                id: 1,
+                id: '1',
                 institution: '',
                 focus: '',
                 dates: '',
@@ -61,6 +61,8 @@ class App extends React.Component {
         this.handleAddr2Change = this.handleAddr2Change.bind(this);
         this.handlePhoneChange = this.handlePhoneChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
+
+        this.handleEditExpSubmit = this.handleEditExpSubmit.bind(this);
     }
 
     handleEditPageToggle() {
@@ -134,6 +136,18 @@ class App extends React.Component {
             alert('Please provide a technology in the input field');
         }
         el.value = '';
+    }
+    // exp fxns
+    handleEditExpSubmit(id, company, title, dates, description) {
+        var arr = this.state.experience;
+        var el = arr.filter(el => el.id === id);
+        el.company = company;
+        el.title = title;
+        el.dates = dates;
+        el.description = description;
+        arr = arr.filter(e => e.id !== id);
+        arr.push(el);
+        this.setState({ experience: arr });
     }
     render() {
         return(
@@ -278,18 +292,19 @@ class App extends React.Component {
                             <div
                             className='edit-page-exp'
                             id={`edit-page-exp-${exp.id}`}>
-                                <p>{exp.title}</p>
-                                <p>{exp.company}</p>
-                                <p>{exp.dates}</p>
-                                <p>{exp.description}</p>
+                                <p className='edit-page-exp-item-company'>{exp.company}</p>
+                                <p className='edit-page-exp-item-title'>{exp.title}</p>
+                                <p className='edit-page-exp-item-dates'>{exp.dates}</p>
+                                <p className='edit-page-exp-item-description'>{exp.description}</p>
                                 <div
                                 className='exp-delete-btn'>[delete]</div>
                                 <EditExpModal
                                 id={exp.id}
-                                title={exp.title}
                                 company={exp.company}
+                                title={exp.title}
                                 dates={exp.dates}
-                                description={exp.description}/>
+                                description={exp.description}
+                                submit={this.handleEditExpSubmit}/>
                             </div>
                         )
                     })}

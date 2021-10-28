@@ -28,10 +28,11 @@ class EditExpModal extends React.Component {
                 show={this.state.show}
                 hide={this.hideModal}
                 id={this.props.id}
-                title={this.props.title}
                 company={this.props.company}
+                title={this.props.title}
                 dates={this.props.dates}
-                description={this.props.description}/>
+                description={this.props.description}
+                submit={this.props.submit}/>
             </div>
 
         )
