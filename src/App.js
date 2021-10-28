@@ -64,6 +64,7 @@ class App extends React.Component {
         this.handleEmailChange = this.handleEmailChange.bind(this);
 
         this.handleEditExpSubmit = this.handleEditExpSubmit.bind(this);
+        this.handleAddExpSubmit = this.handleAddExpSubmit.bind(this);
     }
 
     handleEditPageToggle() {
@@ -140,8 +141,8 @@ class App extends React.Component {
     }
     // exp fxns
     handleEditExpSubmit(id, company, title, dates, description) {
-        var arr = this.state.experience;
-        var el = arr.filter(el => el.id === id);
+        let arr = this.state.experience;
+        let el = arr.filter(el => el.id === id);
         el.company = company;
         el.title = title;
         el.dates = dates;
@@ -151,12 +152,20 @@ class App extends React.Component {
         this.setState({ experience: arr });
     }
     handleDeleteExp(id) {
-        var arr = this.state.experience;
+        let arr = this.state.experience;
         arr = arr.filter(e => e.id !== id);
         this.setState({ experience: arr });
     }
     handleAddExpSubmit(id, company, title, dates, description) {
-        alert(id + company + title + dates + description);
+        let arr = this.state.experience;
+        let el = {};
+        el.id = id;
+        el.company = company;
+        el.title = title;
+        el.dates = dates;
+        el.description = description;
+        arr.push(el);
+        this.setState({ experience: arr });
     }
     render() {
         return(
