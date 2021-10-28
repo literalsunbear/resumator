@@ -155,8 +155,8 @@ class App extends React.Component {
         arr = arr.filter(e => e.id !== id);
         this.setState({ experience: arr });
     }
-    handleAddExpSubmit() {
-        alert('you are adding experience');
+    handleAddExpSubmit(id, company, title, dates, description) {
+        alert(id + company + title + dates + description);
     }
     render() {
         return(

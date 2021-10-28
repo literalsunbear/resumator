@@ -27,8 +27,9 @@ class AddExpModalWindow extends React.Component {
     handleDescriptionChange(e) {
         this.setState({ description: e.target.value });
     }
-    handleSubmit() {
-        this.props.submit();
+    handleSubmit(company, title, dates, description) {
+        const id = Math.floor(100 + Math.random() * 900) + '';
+        this.props.submit(id, company, title, dates, description);
         this.props.hide();
     }
     render() {
