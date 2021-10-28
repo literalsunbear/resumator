@@ -1,6 +1,7 @@
 import React from 'react';
 import PreviewPage from './PreviewPage';
 import EditExpModal from './EditExpModal';
+import AddExpModal from './AddExpModal';
 import './App.css';
 
 class App extends React.Component {
@@ -148,6 +149,14 @@ class App extends React.Component {
         arr = arr.filter(e => e.id !== id);
         arr.push(el);
         this.setState({ experience: arr });
+    }
+    handleDeleteExp(id) {
+        var arr = this.state.experience;
+        arr = arr.filter(e => e.id !== id);
+        this.setState({ experience: arr });
+    }
+    handleAddExpSubmit() {
+        alert('you are adding experience');
     }
     render() {
         return(
@@ -297,7 +306,8 @@ class App extends React.Component {
                                 <p className='edit-page-exp-item-dates'>{exp.dates}</p>
                                 <p className='edit-page-exp-item-description'>{exp.description}</p>
                                 <div
-                                className='exp-delete-btn'>[delete]</div>
+                                className='exp-delete-btn'
+                                onClick={()=>{this.handleDeleteExp(exp.id)}}>[delete]</div>
                                 <EditExpModal
                                 id={exp.id}
                                 company={exp.company}
@@ -308,8 +318,8 @@ class App extends React.Component {
                             </div>
                         )
                     })}
-                    <div
-                    className='exp-add-btn'>[add]</div>
+                   <AddExpModal
+                   submit={this.handleAddExpSubmit}/>
                 </div>
 
 

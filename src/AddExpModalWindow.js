@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EditExpModalWindow extends React.Component {
+class AddExpModalWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,8 +27,8 @@ class EditExpModalWindow extends React.Component {
     handleDescriptionChange(e) {
         this.setState({ description: e.target.value });
     }
-    handleSubmit(id, company, title, dates, description) {
-        this.props.submit(id, company, title, dates, description);
+    handleSubmit() {
+        this.props.submit();
         this.props.hide();
     }
     render() {
@@ -37,18 +37,14 @@ class EditExpModalWindow extends React.Component {
             <div
             className={windowClassName}
             id={`edit-exp-window-${this.props.id}`}>
-                <p>edit your experience</p>
+                <p>add your experience</p>
                 <input 
-                placeholder={this.props.company}
                 onChange={this.handleCompanyChange}></input>
                 <input 
-                placeholder={this.props.title}
                 onChange={this.handleTitleChange}></input>
                 <input 
-                placeholder={this.props.dates}
                 onChange={this.handleDatesChange}></input>
                 <textarea 
-                placeholder={this.props.description}
                 onChange={this.handleDescriptionChange}></textarea>
                 <div
                 className='hide-edit-exp-window-btn'
@@ -56,7 +52,6 @@ class EditExpModalWindow extends React.Component {
                 <div
                 className='submit-edit-exp-window-btn'
                 onClick={()=>{this.handleSubmit(
-                    this.props.id,
                     this.state.company,
                     this.state.title,
                     this.state.dates,
@@ -65,4 +60,4 @@ class EditExpModalWindow extends React.Component {
         )
     }
 }
-export default EditExpModalWindow;
+export default AddExpModalWindow;
