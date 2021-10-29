@@ -1,6 +1,8 @@
 import React from 'react';
 import EditExpModalWindow from './EditExpModalWindow';
 
+import editBtn from './static/images/edit_black_24dp.svg';
+
 class EditExpModal extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,9 @@ class EditExpModal extends React.Component {
             className='edit-exp-modal-container'>
                 <div
                 className='edit-exp-modal-btn'
-                onClick={this.showModal}>[edit]</div>
+                onClick={this.showModal}>
+                    <img src={editBtn}></img>
+                </div>
                 <EditExpModalWindow
                 show={this.state.show}
                 hide={this.hideModal}

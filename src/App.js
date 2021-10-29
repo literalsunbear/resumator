@@ -2,6 +2,11 @@ import React from 'react';
 import PreviewPage from './PreviewPage';
 import EditExpModal from './EditExpModal';
 import AddExpModal from './AddExpModal';
+
+import deleteBtn from './static/images/delete_black_24dp.svg';
+import clearBtn from './static/images/clear_black_24dp.svg';
+import addBtn from './static/images/add_black_24dp.svg';
+import editBtn from './static/images/edit_black_24dp.svg';
 import './App.css';
 
 class App extends React.Component {
@@ -249,7 +254,7 @@ class App extends React.Component {
                                     <div
                                     className='skill-delete-btn'
                                     onClick={()=>{this.handleDeleteSkill(skill)}}>
-                                        [delete]
+                                        <img src={clearBtn}></img>
                                     </div>
                                     <p>{skill}</p>
                                 </div>
@@ -257,9 +262,11 @@ class App extends React.Component {
                         })}
                         <div
                         className='edit-skills-add'>
-                                                        <div
+                            <div
                             className='skill-add-btn'
-                            onClick={()=>{this.handleAddSkill()}}>[add]</div> 
+                            onClick={()=>{this.handleAddSkill()}}>
+                                <img src={addBtn}></img>
+                            </div> 
                             <input
                             type='text'
                             id='skill-add-input'
@@ -281,7 +288,7 @@ class App extends React.Component {
                                     <div
                                     className='skill-delete-btn'
                                     onClick={()=>{this.handleDeleteTech(technology)}}>
-                                        [delete]
+                                        <img src={clearBtn}></img>
                                     </div>
                                     <p>{technology}</p>
                                 </div>
@@ -291,7 +298,10 @@ class App extends React.Component {
                         className='edit-tech-add'>
                             <div
                             className='tech-add-btn'
-                            onClick={()=>{this.handleAddTech()}}>[add]</div> 
+                            onClick={()=>{this.handleAddTech()}}>
+                                                                <img src={addBtn}></img>
+    
+                            </div> 
                             <input
                             type='text'
                             id='tech-add-input'
@@ -328,7 +338,9 @@ class App extends React.Component {
                                     submit={this.handleEditExpSubmit}/>
                                     <div
                                     className='exp-delete-btn'
-                                    onClick={()=>{this.handleDeleteExp(exp.id)}}>[delete]</div>
+                                    onClick={()=>{this.handleDeleteExp(exp.id)}}>
+                                        <img src={deleteBtn}></img>
+                                    </div>
                                 </div>
                             </div>
                         )

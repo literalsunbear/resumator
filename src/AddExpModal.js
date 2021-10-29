@@ -1,6 +1,8 @@
 import React from 'react';
 import AddexpModalWindow from './AddExpModalWindow';
 
+import addBtn from './static/images/add_black_24dp.svg';
+
 class EditExpModal extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +25,9 @@ class EditExpModal extends React.Component {
             className='add-exp-modal-container'>
                 <div
                 className='add-exp-modal-btn'
-                onClick={this.showModal}>[add]</div>
+                onClick={this.showModal}>
+                    <img src={addBtn}></img>
+                </div>
                 <AddexpModalWindow
                 show={this.state.show}
                 hide={this.hideModal}

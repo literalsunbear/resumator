@@ -1,5 +1,8 @@
 import React from 'react';
 
+import clearBtn from './static/images/clear_black_24dp.svg';
+import addBtn from './static/images/add_black_24dp.svg';
+
 class AddExpModalWindow extends React.Component {
     constructor(props) {
         super(props);
@@ -66,11 +69,14 @@ class AddExpModalWindow extends React.Component {
                         this.state.company,
                         this.state.title,
                         this.state.dates,
-                        this.state.description)}}>[submit]
+                        this.state.description)}}>
+                            <img src={addBtn}></img>
+
                     </div>
                     <div
-                        className='hide-add-exp-window-btn'
-                        onClick={()=>{this.props.hide()}}>[hide]
+                    className='hide-add-exp-window-btn'
+                    onClick={()=>{this.props.hide()}}>
+                        <img src={clearBtn}></img>
                     </div>
                 </div>
                 
