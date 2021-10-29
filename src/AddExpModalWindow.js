@@ -30,33 +30,50 @@ class AddExpModalWindow extends React.Component {
     handleSubmit(company, title, dates, description) {
         const id = Math.floor(100 + Math.random() * 900) + '';
         this.props.submit(id, company, title, dates, description);
+        this.setState({ id: '', company: '', title: '', dates: '', description: '' });
+        const inputs = document.querySelectorAll('.add-exp-window-input');
+        inputs.forEach(input => {
+            input.value = '';
+        });
         this.props.hide();
     }
     render() {
-        const windowClassName = this.props.show ? 'edit-exp-window display-block' : 'edit-exp-window display-none';
+        const windowClassName = this.props.show ? 'add-exp-window display-block' : 'add-exp-window display-none';
         return(
             <div
-            className={windowClassName}
-            id={`edit-exp-window-${this.props.id}`}>
+            className={windowClassName}>
                 <p>add your experience</p>
                 <input 
+                className='add-exp-window-input'
+                placeholder='EXAMPLE COMPANY'
                 onChange={this.handleCompanyChange}></input>
                 <input 
+                className='add-exp-window-input'
+                placeholder='Your Title'
                 onChange={this.handleTitleChange}></input>
                 <input 
+                className='add-exp-window-input'
+                placeholder='20XX - 20XX'
                 onChange={this.handleDatesChange}></input>
                 <textarea 
+                className='add-exp-window-input'
+                placeholder='You can add a short description here.'
                 onChange={this.handleDescriptionChange}></textarea>
-                <div
-                className='hide-edit-exp-window-btn'
-                onClick={()=>{this.props.hide()}}>[hide]</div>
-                <div
-                className='submit-edit-exp-window-btn'
-                onClick={()=>{this.handleSubmit(
-                    this.state.company,
-                    this.state.title,
-                    this.state.dates,
-                    this.state.description)}}>[submit]</div>
+                <div className='exp-window-btn-group'>
+                    <div
+                    className='submit-add-exp-window-btn'
+                    onClick={()=>{this.handleSubmit(
+                        this.state.company,
+                        this.state.title,
+                        this.state.dates,
+                        this.state.description)}}>[submit]
+                    </div>
+                    <div
+                        className='hide-add-exp-window-btn'
+                        onClick={()=>{this.props.hide()}}>[hide]
+                    </div>
+                </div>
+                
             </div>
         )
     }

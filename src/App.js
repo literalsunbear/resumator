@@ -318,15 +318,18 @@ class App extends React.Component {
                                 <p className='edit-page-exp-item-dates'>{exp.dates}</p>
                                 <p className='edit-page-exp-item-description'>{exp.description}</p>
                                 <div
-                                className='exp-delete-btn'
-                                onClick={()=>{this.handleDeleteExp(exp.id)}}>[delete]</div>
-                                <EditExpModal
-                                id={exp.id}
-                                company={exp.company}
-                                title={exp.title}
-                                dates={exp.dates}
-                                description={exp.description}
-                                submit={this.handleEditExpSubmit}/>
+                                className='edit-page-exp-item-btn-group'>
+                                    <EditExpModal
+                                    id={exp.id}
+                                    company={exp.company}
+                                    title={exp.title}
+                                    dates={exp.dates}
+                                    description={exp.description}
+                                    submit={this.handleEditExpSubmit}/>
+                                    <div
+                                    className='exp-delete-btn'
+                                    onClick={()=>{this.handleDeleteExp(exp.id)}}>[delete]</div>
+                                </div>
                             </div>
                         )
                     })}

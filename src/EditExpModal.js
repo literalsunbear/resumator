@@ -20,7 +20,7 @@ class EditExpModal extends React.Component {
     render() {
         return(
             <div
-            className='edit-task-modal-container'>
+            className='edit-exp-modal-container'>
                 <div
                 className='edit-exp-modal-btn'
                 onClick={this.showModal}>[edit]</div>

@@ -5,7 +5,6 @@ body, html {
 }
 html {
   overflow-x: hidden;
-
 }
 #root {
   position: relative;
@@ -71,6 +70,15 @@ html {
   flex-direction: column;
   width: 50%;
 }
+.edit-hero-form input,
+.edit-contact-form input {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+.edit-hero-form textarea {
+  outline: none;
+}
 /* summary form */
 .edit-summary-form {
   display: flex;
@@ -88,6 +96,11 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.edit-skills-tech-container input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
 }
 .edit-skills-list,
 .edit-tech-list {
@@ -108,19 +121,49 @@ html {
 }
 /* experience */
 .edit-page-exp {
-  width: 100%;
+  width: 75%;
+  margin: 10px auto;
   position: relative;
   display: flex;
   flex-direction: column;
 
   border: 1px solid black;
 }
-.edit-exp-window {
+.edit-page-exp-item-btn-group {
+  display: flex;
+  margin-left: auto;
+}
+.edit-page-exp p {
+  margin: 0;
+  padding: 0;
+}
+.edit-exp-window{
   width: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 3;
   transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+  border: 1px solid red;
+}
+.exp-window-btn-group {
+  display: flex;
+}
+.add-exp-modal-container {
+  position: relative;
+}
+.add-exp-window {
+  width: 50%;
+  position: absolute;
+  top: -50vh;
+  left: 50%;
+  z-index: 3;
+  transform: translateX(-50%);
 
   display: flex;
   flex-direction: column;
@@ -233,7 +276,24 @@ regular styles */
 .preview-experience-container {
   background: lightgray;
 }
+.preview-experience-container ul {
+  padding: 0;
+}
 .preview-exp-item {
+  margin: 10px auto;
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+.preview-exp-item::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  height: 2px;
+  width: 75%;
+  background: black;
+}
+.preview-exp-item p {
+  margin: 0;
+  padding: 0;
 }

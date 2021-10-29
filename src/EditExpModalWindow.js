@@ -29,14 +29,14 @@ class EditExpModalWindow extends React.Component {
     }
     handleSubmit(id, company, title, dates, description) {
         this.props.submit(id, company, title, dates, description);
+        this.setState({ id: '', company: '', title: '', dates: '', description: '' });
         this.props.hide();
     }
     render() {
         const windowClassName = this.props.show ? 'edit-exp-window display-block' : 'edit-exp-window display-none';
         return(
             <div
-            className={windowClassName}
-            id={`edit-exp-window-${this.props.id}`}>
+            className={windowClassName}>
                 <p>edit your experience</p>
                 <input 
                 placeholder={this.props.company}
@@ -51,16 +51,21 @@ class EditExpModalWindow extends React.Component {
                 placeholder={this.props.description}
                 onChange={this.handleDescriptionChange}></textarea>
                 <div
-                className='hide-edit-exp-window-btn'
-                onClick={()=>{this.props.hide()}}>[hide]</div>
-                <div
-                className='submit-edit-exp-window-btn'
-                onClick={()=>{this.handleSubmit(
-                    this.props.id,
-                    this.state.company,
-                    this.state.title,
-                    this.state.dates,
-                    this.state.description)}}>[submit]</div>
+                className='exp-window-btn-group'>
+                    <div
+                    className='submit-edit-exp-window-btn'
+                    onClick={()=>{this.handleSubmit(
+                        this.props.id,
+                        this.state.company,
+                        this.state.title,
+                        this.state.dates,
+                        this.state.description)}}>[submit]
+                    </div>  
+                    <div
+                    className='hide-edit-exp-window-btn'
+                    onClick={()=>{this.props.hide()}}>[hide]</div>          
+                </div>
+                
             </div>
         )
     }
