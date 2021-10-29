@@ -262,15 +262,15 @@ class App extends React.Component {
                         })}
                         <div
                         className='edit-skills-add'>
+                            <input
+                            type='text'
+                            id='skill-add-input'
+                            onChange={this.handleAddSkillChange}></input>
                             <div
                             className='skill-add-btn'
                             onClick={()=>{this.handleAddSkill()}}>
                                 <img src={addBtn}></img>
                             </div> 
-                            <input
-                            type='text'
-                            id='skill-add-input'
-                            onChange={this.handleAddSkillChange}></input>
                         </div>
                         
                     </div>
@@ -296,16 +296,15 @@ class App extends React.Component {
                         })}
                         <div
                         className='edit-tech-add'>
-                            <div
-                            className='tech-add-btn'
-                            onClick={()=>{this.handleAddTech()}}>
-                                                                <img src={addBtn}></img>
-    
-                            </div> 
                             <input
                             type='text'
                             id='tech-add-input'
                             onChange={this.handleAddSkillChange}></input>
+                            <div
+                            className='tech-add-btn'
+                            onClick={()=>{this.handleAddTech()}}>
+                                <img src={addBtn}></img>
+                            </div> 
           
                         </div>
                         

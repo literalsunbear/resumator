@@ -69,6 +69,7 @@ html {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin: 10px;
 }
 .edit-hero-form input,
 .edit-contact-form input {
@@ -84,12 +85,14 @@ html {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin: 10px;
 }
 /* contact form */
 .edit-contact-form {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin: 10px;
 }
 /* skills and tech */
 .edit-skills-tech-container {
@@ -101,6 +104,10 @@ html {
   outline: none;
   border: none;
   border-bottom: 1px solid black;
+}
+.edit-skills-section,
+.edit-tech-section {
+  margin: 10px;
 }
 .edit-skills-list,
 .edit-tech-list {
@@ -120,6 +127,9 @@ html {
   gap: 10px;
 }
 /* experience */
+.edit-experience-container {
+  margin: 10px;
+}
 .edit-page-exp {
   width: 75%;
   margin: 10px auto;
