@@ -61,7 +61,6 @@ class App extends React.Component {
         }
 
         this.handleEditPageToggle = this.handleEditPageToggle.bind(this);
-        this.handlePreviewPageToggle = this.handlePreviewPageToggle.bind(this);
         this.handleEditNameChange = this.handleEditNameChange.bind(this);
         this.handleEditTitleChange = this.handleEditTitleChange.bind(this);
         this.handleEditAviChange = this.handleEditAviChange.bind(this);
@@ -80,16 +79,20 @@ class App extends React.Component {
     }
 
     handleEditPageToggle() {
+        var toggle = document.querySelector('.edit-page-toggle-btn');
         const edit = document.querySelector('.edit-page');
         const preview = document.querySelector('.preview-page');
+
+        if(toggle.innerHTML === 'preview') {
+            toggle.innerHTML = 'edit';
+        } else if(toggle.innerHTML === 'edit') {
+            toggle.innerHTML = 'preview';
+        } else {
+            return;
+        }
         edit.classList.toggle('hide');
         preview.classList.toggle('show');
-    }
-    handlePreviewPageToggle() {
-        const edit = document.querySelector('.edit-page');
-        const preview = document.querySelector('.preview-page');
-        edit.classList.toggle('hide');
-        preview.classList.toggle('show');
+
     }
     // header fxns
     handleEditNameChange(e) {
@@ -209,13 +212,20 @@ class App extends React.Component {
     }
     render() {
         return(
-            <>
-            <div className='edit-page'>
+
+            <div
+            className='App'>
                 <div
                 className='edit-page-toggle-btn'
                 onClick={()=>{this.handleEditPageToggle()}}>
                     preview
                 </div>
+                {/* <div
+                className='preview-page-toggle-btn'
+                onClick={()=>{this.handlePreviewPageToggle()}}>
+                    edit
+            </div> */}
+            <div className='edit-page'>
                 {/* NAME/TITLE/HEADSHOT */}
                 <div className='edit-hero-form'>
                     <label htmlFor='name-input'>Your Name: </label>
@@ -432,7 +442,6 @@ class App extends React.Component {
 
             </div>
             <PreviewPage
-            toggle={this.handlePreviewPageToggle}
             name={this.state.name}
             title={this.state.title}
             avi={this.state.avi}
@@ -448,7 +457,9 @@ class App extends React.Component {
             
             experience={this.state.experience}
             education={this.state.education}/>
-            </>
+            </div>
+
+
         )
     }
 }

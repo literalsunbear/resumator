@@ -4,11 +4,6 @@ class PreviewPage extends React.Component {
     render() {
         return(
             <div className='preview-page'>
-            <div
-                className='preview-page-toggle-btn'
-                onClick={this.props.toggle}>
-                    edit
-            </div>
             {/* rendered CV */}
             {/* name, title, avi */}
             <div

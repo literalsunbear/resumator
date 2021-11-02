@@ -1,17 +1,22 @@
 body, html {
   padding: 0;
   margin: 0;
+  min-height: 874px;
   background: black;
 }
 html {
   overflow-x: hidden;
 }
-.edit-page-toggle-btn,
-.preview-page-toggle-btn {
+.App {
+  display: relative;
+  min-height: 874px;
+}
+.edit-page-toggle-btn {
   position: absolute;
   height: 100px;
   width: 100px;
   top: 0;
+  z-index: 3;
   border-radius: 50%;
   display: grid;
   align-items: center;
@@ -19,24 +24,21 @@ html {
 
   background: greenyellow;
 }
-.edit-page-toggle-btn:hover,
-.preview-page-toggle-btn:hover {
+.edit-page-toggle-btn:hover {
   cursor: pointer;
   transform: scale(.9);
 }
 .edit-page-toggle-btn {
-  right: -100px;
+  top: 25px;
+  right: 100px;
 }
-.preview-page-toggle-btn {
-  left: -100px;
-}
+
 .edit-page,
 .preview-page {
   top: 25px;
   padding-bottom: 2em;
   width: 595px;
-  min-height: 842px;
-
+  min-height: 874px;
   background: white;
 }
 .edit-page {
@@ -54,6 +56,12 @@ html {
 .preview-page.show {
   left: 50%;
   transform: translateX(-50%);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.preview-page.show::-webkit-scrollbar {
+  display: none;
 }
 .edit-page,
 .edit-page-hide,
@@ -292,12 +300,11 @@ regular styles */
 /* main content */
 .preview-main-content-container {
   position: absolute;
+  height: 100%;
   top: 150px;
   right: 40px;
-  bottom: 0;
   left: 40px;
   z-index: -1;
-  display: block !important;
 }
 /* left column*/
 .preview-left-column {
