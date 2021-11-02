@@ -1,3 +1,7 @@
+:root {
+  --color-primary: #a597cc;
+  --color-secondary: #6a5acd;
+}
 body, html {
   padding: 0;
   margin: 0;
@@ -15,24 +19,53 @@ html {
   position: absolute;
   height: 100px;
   width: 100px;
-  top: 0;
+  top: 25px;
+  right: 100px;
   z-index: 3;
   border-radius: 50%;
   display: grid;
   align-items: center;
   justify-content: center;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.25);
 
-  background: greenyellow;
+
+  background: var(--color-primary);
+  transition: all 250ms ease;
 }
-.edit-page-toggle-btn:hover {
+.edit-page-toggle-btn:hover,
+#image-download-btn.show:hover {
   cursor: pointer;
   transform: scale(.9);
+  transition: all 250ms ease;
 }
-.edit-page-toggle-btn {
-  top: 25px;
+#image-download-btn,
+#image-download-btn.show {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 150px;
   right: 100px;
+  z-index: 3;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.25);
 }
-
+#image-download-btn {
+  opacity: 0;
+  background: none;
+  pointer-events: none;
+  transition: all 250ms ease;
+}
+#image-download-btn.show {
+  opacity: 1;
+  background: var(--color-primary);
+  pointer-events: all;
+  transition: all 250ms ease;
+}
 .edit-page,
 .preview-page {
   top: 25px;
@@ -56,9 +89,8 @@ html {
 .preview-page.show {
   left: 50%;
   transform: translateX(-50%);
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow: auto;
+
 }
 .preview-page.show::-webkit-scrollbar {
   display: none;
@@ -265,7 +297,7 @@ regular styles */
   height: 150px;
   width: 100%;
 
-  background: slateblue;
+  background: var(--color-primary);
 }
 
 .preview-hero-container h1 {
@@ -296,6 +328,7 @@ regular styles */
   background-size: cover;
 
   background: lightgray;
+  border: 6px solid var(--color-secondary);
 }
 /* main content */
 .preview-main-content-container {
@@ -323,7 +356,7 @@ regular styles */
   margin: .25em 0;
   padding: 0;
 
-  color: slateblue;
+  color: var(--color-primary);
 }
 .preview-left-column ul li::marker {
   color: rgba(106, 90, 205, .5);
@@ -353,7 +386,7 @@ regular styles */
   margin: .25em 0;
   padding: 0;
 
-  color: rgb(106, 90, 205);
+  color: var(--color-primary);
 }
 .preview-contact-container p {
   padding: 0;
@@ -384,3 +417,4 @@ regular styles */
   margin: 0;
   padding: 0;
 }
+

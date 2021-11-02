@@ -1,4 +1,6 @@
 import React from 'react';
+import html2canvas from 'html2canvas';
+
 import PreviewPage from './PreviewPage';
 import EditExpModal from './EditExpModal';
 import AddExpModal from './AddExpModal';
@@ -79,19 +81,23 @@ class App extends React.Component {
     }
 
     handleEditPageToggle() {
-        var toggle = document.querySelector('.edit-page-toggle-btn');
-        const edit = document.querySelector('.edit-page');
-        const preview = document.querySelector('.preview-page');
+        const toggle = document.querySelector('.edit-page-toggle-btn');
+        const download = document.querySelector('#image-download-btn');
+
+        const editPage = document.querySelector('.edit-page');
+        const previewPage = document.querySelector('.preview-page');
 
         if(toggle.innerHTML === 'preview') {
             toggle.innerHTML = 'edit';
+            download.classList.toggle('show');
         } else if(toggle.innerHTML === 'edit') {
             toggle.innerHTML = 'preview';
+            download.classList.toggle('show');
         } else {
             return;
         }
-        edit.classList.toggle('hide');
-        preview.classList.toggle('show');
+        editPage.classList.toggle('hide');
+        previewPage.classList.toggle('show');
 
     }
     // header fxns
@@ -210,6 +216,19 @@ class App extends React.Component {
         arr.push(el);
         this.setState({ education: arr });
     }
+    // download cv as image fxn
+    downloadAsImage() {
+        const root = document.querySelector('#root');
+        const element = document.querySelector('.preview-page.show');
+        const clone = element.cloneNode(true);
+        clone.style = 'transform: none; overflow: visible;';
+        root.append(clone);
+        html2canvas(clone, {height: clone.scrollHeight}).then(function(canvas) {
+            var img = canvas.toDataURL();
+            window.open(img);
+        });
+        root.removeChild(clone);
+    }
     render() {
         return(
 
@@ -220,11 +239,11 @@ class App extends React.Component {
                 onClick={()=>{this.handleEditPageToggle()}}>
                     preview
                 </div>
-                {/* <div
-                className='preview-page-toggle-btn'
-                onClick={()=>{this.handlePreviewPageToggle()}}>
-                    edit
-            </div> */}
+                <div
+                id='image-download-btn' 
+                onClick={()=>{this.downloadAsImage()}}>
+                    save .png
+                </div>
             <div className='edit-page'>
                 {/* NAME/TITLE/HEADSHOT */}
                 <div className='edit-hero-form'>

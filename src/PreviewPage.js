@@ -1,7 +1,8 @@
 import React from 'react';
 
 class PreviewPage extends React.Component {
-    render() {
+    render() {       
+
         return(
             <div className='preview-page'>
             {/* rendered CV */}
@@ -110,7 +111,7 @@ class PreviewPage extends React.Component {
                                     key={edu.company}
                                     className='preview-edu-item'>
                                         <p
-                                         style={{
+                                        style={{
                                             fontWeight: 'bold',
                                             opacity: .65
                                         }}>{edu.institution}</p>
@@ -128,7 +129,6 @@ class PreviewPage extends React.Component {
                 </div>
 
             </div>
-
         </div>
         )
     }
