@@ -97,6 +97,25 @@ class PreviewPage extends React.Component {
                             })}
                         </ul>
                     </div>
+                    <div
+                    className='preview-education-container'>
+                        <h3>education</h3>
+                        <ul
+                        className='preview-exp-list'>
+                            {this.props.education.map(edu => {
+                                return(
+                                    <li
+                                    key={edu.company}
+                                    className='preview-edu-item'>
+                                        <p>{edu.institution}</p>
+                                        <p>{edu.degree}</p>
+                                        <p>{edu.dates}</p>
+                                        <p>{edu.description}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </div>
 
             </div>

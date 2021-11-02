@@ -2,6 +2,8 @@ import React from 'react';
 import PreviewPage from './PreviewPage';
 import EditExpModal from './EditExpModal';
 import AddExpModal from './AddExpModal';
+import EditEduModal from './EditEduModal'
+import AddEduModal from './AddEduModal';
 
 import deleteBtn from './static/images/delete_black_24dp.svg';
 import clearBtn from './static/images/clear_black_24dp.svg';
@@ -47,11 +49,12 @@ class App extends React.Component {
             education: [
                 {
                 id: '1',
-                institution: '',
-                focus: '',
-                dates: '',
-                degree: '',
-                description: ''
+                institution: 'EXAMPLE SCHOOL',
+                dates: '20XX - 20XX',
+                degree: 'B.S. of Computer Science',
+                description: 'You can add a short description' +
+                ' to outline some of your accomplishments during' +
+                ' your tenure at this school.'
                 }
             ],
         }
@@ -70,6 +73,9 @@ class App extends React.Component {
 
         this.handleEditExpSubmit = this.handleEditExpSubmit.bind(this);
         this.handleAddExpSubmit = this.handleAddExpSubmit.bind(this);
+
+        this.handleEditEduSubmit = this.handleEditEduSubmit.bind(this);
+        this.handleAddEduSubmit = this.handleAddEduSubmit.bind(this);
     }
 
     handleEditPageToggle() {
@@ -171,6 +177,34 @@ class App extends React.Component {
         el.description = description;
         arr.push(el);
         this.setState({ experience: arr });
+    }
+    // education fxnx
+    handleEditEduSubmit(id, institution, dates, degree, description) {
+        let arr = this.state.education;
+        let el = arr.filter(el => el.id === id);
+        el.institution = institution;
+        el.dates = dates;
+        el.degree = degree;
+        el.description = description;
+        arr = arr.filter(e => e.id !== id);
+        arr.push(el);
+        this.setState({ education: arr });
+    }
+    handleDeleteEdu(id) {
+        let arr = this.state.education;
+        arr = arr.filter(e => e.id !== id);
+        this.setState({ education: arr });
+    }
+    handleAddEduSubmit(id, institution, dates, degree, description) {
+        let arr = this.state.education;
+        let el = {};
+        el.id = id;
+        el.institution = institution;
+        el.dates = dates;
+        el.degree = degree;
+        el.description = description;
+        arr.push(el);
+        this.setState({ education: arr });
     }
     render() {
         return(
@@ -347,6 +381,42 @@ class App extends React.Component {
                    <AddExpModal
                    submit={this.handleAddExpSubmit}/>
                 </div>
+                {/* EDUCATION */}
+                <div
+                className='edit-education-container'>
+                    <p
+                    className='edit-education-section-label'>Education:</p>
+                    {this.state.education.map(edu => {
+                        return(
+                            <div
+                            key={edu.company}
+                            className='edit-page-edu'
+                            id={`edit-page-edu-${edu.id}`}>
+                                <p className='edit-page-edu-item-institution'>{edu.institution}</p>
+                                <p className='edit-page-edu-item-degree'>{edu.degree}</p>
+                                <p className='edit-page-edu-item-dates'>{edu.dates}</p>
+                                <p className='edit-page-edu-item-description'>{edu.description}</p>
+                                <div
+                                className='edit-page-edu-item-btn-group'>
+                                    <EditEduModal
+                                    id={edu.id}
+                                    company={edu.institution}
+                                    title={edu.dates}
+                                    dates={edu.degree}
+                                    description={edu.description}
+                                    submit={this.handleEditEduSubmit}/>
+                                    <div
+                                    className='edu-delete-btn'
+                                    onClick={()=>{this.handleDeleteEdu(edu.id)}}>
+                                        <img src={deleteBtn}></img>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+                   <AddEduModal
+                   submit={this.handleAddEduSubmit}/>
+                </div>
 
 
             </div>
@@ -365,7 +435,8 @@ class App extends React.Component {
             skills={this.state.skills}
             tech={this.state.tech}
             
-            experience={this.state.experience}/>
+            experience={this.state.experience}
+            education={this.state.education}/>
             </>
         )
     }
