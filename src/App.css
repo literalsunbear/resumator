@@ -6,29 +6,23 @@ body, html {
 html {
   overflow-x: hidden;
 }
-#root {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background: none;
-}
-
-.edit-page,
-.preview-page {
-  width: 595px;
-  min-height: 842px;
-
-  background: white;
-}
-
 .edit-page-toggle-btn,
 .preview-page-toggle-btn {
   position: absolute;
   height: 100px;
   width: 100px;
   top: 0;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 
-  background: red;
+  background: greenyellow;
+}
+.edit-page-toggle-btn:hover,
+.preview-page-toggle-btn:hover {
+  cursor: pointer;
+  transform: scale(.9);
 }
 .edit-page-toggle-btn {
   right: -100px;
@@ -39,6 +33,11 @@ html {
 .edit-page,
 .preview-page {
   top: 25px;
+  padding-bottom: 2em;
+  width: 595px;
+  min-height: 842px;
+
+  background: white;
 }
 .edit-page {
   position: absolute;
@@ -65,11 +64,32 @@ html {
 /************************************/
 /* EDIT PAGE ************************/
 /* hero form */
+
 .edit-hero-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 10px;
+}
+#help-prompt {
+  position: absolute;
+  width: 75%;
+  left: 120%;
+  top: 100%;
+  font-size: .8em;
+}
+#help-prompt p {
+  margin: 0;
+  padding: 0;
+}
+#help-prompt img {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: -60%;
+  right: 0;
+  transform: rotate(-45deg);
 }
 .edit-hero-form input,
 .edit-contact-form input {
@@ -95,10 +115,35 @@ html {
   margin: 10px;
 }
 /* skills and tech */
+/* buttons babyyyyy */
+.skill-delete-btn:hover,
+.tech-delete-btn:hover,
+ .exp-delete-btn:hover,
+ .edu-delete-btn:hover,
+ .hide-edit-exp-window-btn:hover,
+ .hide-edit-edu-window-btn:hover{
+  transform: scale(.8);
+  cursor: pointer;
+}
+.skill-add-btn:hover,
+.tech-add-btn:hover,
+.add-exp-modal-btn:hover,
+.add-edu-modal-btn:hover,
+.edit-exp-modal-btn:hover,
+.edit-edu-modal-btn:hover,
+.submit-edit-exp-window-btn:hover,
+.submit-edit-edu-window-btn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
 .edit-skills-tech-container {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+.edit-skills-tech-container p {
+  padding: 0;
+  margin: 0;
+  line-height: 2.6;
 }
 .edit-skills-tech-container input {
   outline: none;
@@ -127,12 +172,13 @@ html {
   gap: 10px;
 }
 /* experience */
-.edit-experience-container {
+.edit-experience-container,
+.edit-education-container {
   margin: 10px;
 }
 .edit-page-exp,
 .edit-page-edu {
-  width: 75%;
+  width: 90%;
   margin: 10px auto;
   position: relative;
   display: flex;
@@ -163,7 +209,7 @@ html {
   flex-direction: column;
 
   background: white;
-  border: 1px solid red;
+  border: 1px solid black;
 }
 .exp-window-btn-group,
 .edu-window-btn-group {
@@ -193,7 +239,7 @@ html {
   flex-direction: column;
 
   background: white;
-  border: 1px solid red;
+  border: 1px solid black;
 }
 /* functional modal css classes must live below
 regular styles */
@@ -211,7 +257,7 @@ regular styles */
   height: 150px;
   width: 100%;
 
-  border: 1px solid red;
+  background: slateblue;
 }
 
 .preview-hero-container h1 {
@@ -219,6 +265,8 @@ regular styles */
   top: 50%;
   right: 40px;
   transform: translateY(-50%);
+
+  color: white;
 }
 .preview-hero-container h2 {
   position: absolute;
@@ -239,7 +287,7 @@ regular styles */
   background-repeat: no-repeat;
   background-size: cover;
 
-  background: gray;
+  background: lightgray;
 }
 /* main content */
 .preview-main-content-container {
@@ -249,7 +297,7 @@ regular styles */
   bottom: 0;
   left: 40px;
   z-index: -1;
-
+  display: block !important;
 }
 /* left column*/
 .preview-left-column {
@@ -263,44 +311,55 @@ regular styles */
   display: flex;
   flex-direction: column;
   gap: 40px;
-
-  border: 1px solid green;
 }
+.preview-left-column h3 {
+  margin: .25em 0;
+  padding: 0;
 
-.preview-skills-container {
-  width: 100%;
-
-  background: lightgray;
+  color: slateblue;
 }
+.preview-left-column ul li::marker {
+  color: rgba(106, 90, 205, .5);
+}
+.preview-skills-container,
 .preview-tech-container {
   width: 100%;
-
-  background: lightgray;
+}
+.preview-skills-container ul,
+.preview-tech-container ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 /* right column */
 .preview-right-column {
   position: absolute;
-
+  
   width: calc(66% - 20px);
   top: 40px;
   right: 0;
   bottom: 0;
+}
 
-  border: 1px solid pink;
-}
-/* summary */
-.preview-summary-container {
-  background: lightgray;
-}
-/* contact */
-.preview-contact-container {
-  background: lightgray;
-}
-/* experience / education */
-.preview-experience-container,
-.preview-education-container {
+.preview-right-column h3 {
   position: relative;
-  background: lightgray;
+  margin: .25em 0;
+  padding: 0;
+
+  color: rgb(106, 90, 205);
+}
+.preview-contact-container p {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+.preview-right-column h3::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 100%;
+  background: rgba(106, 90, 205, .5);
 }
 .preview-experience-container ul,
 .preview-education-container ul {
@@ -310,16 +369,8 @@ regular styles */
 .preview-edu-item {
   margin: 10px auto;
   position: relative;
-  display: flex;
+  display: block;
   flex-direction: column;
-}
-.preview-experience-container::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  height: 2px;
-  width: 75%;
-  background: black;
 }
 .preview-exp-item p,
 .preview-edu-item p {

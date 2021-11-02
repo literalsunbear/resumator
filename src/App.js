@@ -8,23 +8,24 @@ import AddEduModal from './AddEduModal';
 import deleteBtn from './static/images/delete_black_24dp.svg';
 import clearBtn from './static/images/clear_black_24dp.svg';
 import addBtn from './static/images/add_black_24dp.svg';
-import editBtn from './static/images/edit_black_24dp.svg';
+import arrow from './static/images/arrow_forward_black_24dp.svg'
+
 import './App.css';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            title: '',
+            name: 'Your Name',
+            title: 'Your Current Title',
             avi: '',
-            summary: '',
-            contact: {
-                phone: '',
-                addressOne: '',
-                addressTwo: '',
-                email: ''
-            },
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+
+            phone: '123-456-7890',
+            addressOne: '123 Fake Street',
+            addressTwo: 'Anytown, USA',
+            email: 'email@superlegitemailservice.com',
+
             skills: [
                 'version control',
                 'agile / SCRUM',
@@ -232,6 +233,12 @@ class App extends React.Component {
                     type='file'
                     name='avi-input'
                     onChange={this.handleEditAviChange}></input>
+
+                    <div
+                    id='help-prompt'>
+                        <p>Please take your time and fill out the information to the left and below. If you'd like to see what your CV will look like, press this button: </p>
+                        <img src={arrow}></img>
+                    </div>
                 </div>
 
                 {/* SUMMARY */}
@@ -250,25 +257,29 @@ class App extends React.Component {
                     <input
                     type='text'
                     name='addr1-input'
-                    onChange={this.handleAddr1Change}>
+                    onChange={this.handleAddr1Change}
+                    placeholder='123 Fake Street'>
                     </input>
                     <label htmlFor='addr2-input'>Address 2:</label>
                     <input
                     type='text'
                     name='addr2-input'
-                    onChange={this.handleAddr2Change}>
+                    onChange={this.handleAddr2Change}
+                    placeholder='Anytown, USA'>
                     </input>
                     <label htmlFor='number-input'>Phone:</label>
                     <input
                     type='text'
                     name='number-input'
-                    onChange={this.handlePhoneChange}>
+                    onChange={this.handlePhoneChange}
+                    placeholder='123-456-7890'>
                     </input>
                     <label htmlFor='email-input'>Email:</label>
                     <input
                     type='email'
                     name='email-input'
-                    onChange={this.handleEmailChange}>
+                    onChange={this.handleEmailChange}
+                    placeholder='email@superlegitemailservice.com'>
                     </input>
                 </div>
 

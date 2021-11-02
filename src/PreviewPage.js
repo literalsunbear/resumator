@@ -88,9 +88,16 @@ class PreviewPage extends React.Component {
                                     <li
                                     key={exp.company}
                                     className='preview-exp-item'>
-                                        <p>{exp.company}</p>
+                                        <p
+                                        style={{
+                                            fontWeight: 'bold',
+                                            opacity: .65
+                                        }}>{exp.company}</p>
                                         <p>{exp.title}</p>
-                                        <p>{exp.dates}</p>
+                                        <p
+                                        style={{
+                                            fontStyle: 'italic'
+                                        }}>{exp.dates}</p>
                                         <p>{exp.description}</p>
                                     </li>
                                 )
@@ -107,9 +114,16 @@ class PreviewPage extends React.Component {
                                     <li
                                     key={edu.company}
                                     className='preview-edu-item'>
-                                        <p>{edu.institution}</p>
+                                        <p
+                                         style={{
+                                            fontWeight: 'bold',
+                                            opacity: .65
+                                        }}>{edu.institution}</p>
                                         <p>{edu.degree}</p>
-                                        <p>{edu.dates}</p>
+                                        <p
+                                        style={{
+                                            fontStyle: 'italic'
+                                        }}>{edu.dates}</p>
                                         <p>{edu.description}</p>
                                     </li>
                                 )
