@@ -1,7 +1,7 @@
 import React from 'react';
 
-import clearBtn from './static/images/clear_black_24dp.svg';
-import addBtn from './static/images/add_black_24dp.svg';
+import clearBtn from '../static/images/clear_black_24dp.svg';
+import addBtn from '../static/images/add_black_24dp.svg';
 
 class EditEduModalWindow extends React.Component {
     constructor(props) {
@@ -36,10 +36,11 @@ class EditEduModalWindow extends React.Component {
         this.props.hide();
     }
     render() {
-        const windowClassName = this.props.show ? 'edit-edu-window display-block' : 'edit-edu-window display-none';
         return(
             <div
-            className={windowClassName}>
+            className={this.props.show ?
+                        'edit-edu-window display-block' :
+                        'edit-edu-window display-none'}>
                 <p>edit your education</p>
                 <input 
                 placeholder={this.props.institution}

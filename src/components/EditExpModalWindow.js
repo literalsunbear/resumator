@@ -1,9 +1,9 @@
 import React from 'react';
 
-import clearBtn from './static/images/clear_black_24dp.svg';
-import addBtn from './static/images/add_black_24dp.svg';
+import clearBtn from '../static/images/clear_black_24dp.svg';
+import addBtn from '../static/images/add_black_24dp.svg';
 
-class AddExpModalWindow extends React.Component {
+class EditExpModalWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,58 +30,51 @@ class AddExpModalWindow extends React.Component {
     handleDescriptionChange(e) {
         this.setState({ description: e.target.value });
     }
-    handleSubmit(company, title, dates, description) {
-        const id = Math.floor(100 + Math.random() * 900) + '';
+    handleSubmit(id, company, title, dates, description) {
         this.props.submit(id, company, title, dates, description);
         this.setState({ id: '', company: '', title: '', dates: '', description: '' });
-        const inputs = document.querySelectorAll('.add-exp-window-input');
-        inputs.forEach(input => {
-            input.value = '';
-        });
         this.props.hide();
     }
     render() {
-        const windowClassName = this.props.show ? 'add-exp-window display-block' : 'add-exp-window display-none';
         return(
             <div
-            className={windowClassName}>
-                <p>add your experience</p>
+            className={this.props.show ?
+                        'edit-exp-window display-block' :
+                        'edit-exp-window display-none'}>
+                <p>edit your experience</p>
                 <input 
-                className='add-exp-window-input'
-                placeholder='EXAMPLE COMPANY'
+                placeholder={this.props.company}
                 onChange={this.handleCompanyChange}></input>
                 <input 
-                className='add-exp-window-input'
-                placeholder='Your Title'
+                placeholder={this.props.title}
                 onChange={this.handleTitleChange}></input>
                 <input 
-                className='add-exp-window-input'
-                placeholder='20XX - 20XX'
+                placeholder={this.props.dates}
                 onChange={this.handleDatesChange}></input>
                 <textarea 
-                className='add-exp-window-input'
-                placeholder='You can add a short description here.'
+                placeholder={this.props.description}
                 onChange={this.handleDescriptionChange}></textarea>
-                <div className='exp-window-btn-group'>
+                <div
+                className='exp-window-btn-group'>
                     <div
-                    className='submit-add-exp-window-btn'
+                    className='submit-edit-exp-window-btn'
                     onClick={()=>{this.handleSubmit(
+                        this.props.id,
                         this.state.company,
                         this.state.title,
                         this.state.dates,
                         this.state.description)}}>
                             <img src={addBtn}></img>
-
-                    </div>
+                    </div>  
                     <div
-                    className='hide-add-exp-window-btn'
+                    className='hide-edit-exp-window-btn'
                     onClick={()=>{this.props.hide()}}>
                         <img src={clearBtn}></img>
-                    </div>
+                    </div>          
                 </div>
                 
             </div>
         )
     }
 }
-export default AddExpModalWindow;
+export default EditExpModalWindow;

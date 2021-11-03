@@ -1,9 +1,9 @@
 import React from 'react';
-import EditEduModalWindow from './EditEduModalWindow';
+import AddEduModalWindow from './AddEduModalWindow';
 
-import editBtn from './static/images/edit_black_24dp.svg';
+import addBtn from '../static/images/add_black_24dp.svg';
 
-class EditEduModal extends React.Component {
+class AddEduModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,24 +22,19 @@ class EditEduModal extends React.Component {
     render() {
         return(
             <div
-            className='edit-edu-modal-container'>
+            className='add-edu-modal-container'>
                 <div
-                className='edit-edu-modal-btn'
+                className='add-edu-modal-btn'
                 onClick={this.showModal}>
-                    <img src={editBtn}></img>
+                    <img src={addBtn}></img>
                 </div>
-                <EditEduModalWindow
+                <AddEduModalWindow
                 show={this.state.show}
                 hide={this.hideModal}
-                id={this.props.id}
-                institution={this.props.institution}
-                dates={this.props.dates}
-                degree={this.props.degree}
-                description={this.props.description}
                 submit={this.props.submit}/>
             </div>
 
         )
     }
 }
-export default EditEduModal;
+export default AddEduModal;

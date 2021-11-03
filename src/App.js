@@ -1,11 +1,11 @@
 import React from 'react';
 import html2canvas from 'html2canvas';
 
-import PreviewPage from './PreviewPage';
-import EditExpModal from './EditExpModal';
-import AddExpModal from './AddExpModal';
-import EditEduModal from './EditEduModal'
-import AddEduModal from './AddEduModal';
+import PreviewPage from './components/PreviewPage';
+import EditExpModal from './components/EditExpModal';
+import AddExpModal from './components/AddExpModal';
+import EditEduModal from './components/EditEduModal'
+import AddEduModal from './components/AddEduModal';
 
 import deleteBtn from './static/images/delete_black_24dp.svg';
 import clearBtn from './static/images/clear_black_24dp.svg';

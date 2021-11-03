@@ -1,7 +1,7 @@
 import React from 'react';
 import EditExpModalWindow from './EditExpModalWindow';
 
-import editBtn from './static/images/edit_black_24dp.svg';
+import editBtn from '../static/images/edit_black_24dp.svg';
 
 class EditExpModal extends React.Component {
     constructor(props) {

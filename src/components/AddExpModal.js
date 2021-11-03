@@ -1,9 +1,9 @@
 import React from 'react';
-import AddEduModalWindow from './AddEduModalWindow';
+import AddexpModalWindow from './AddExpModalWindow';
 
-import addBtn from './static/images/add_black_24dp.svg';
+import addBtn from '../static/images/add_black_24dp.svg';
 
-class AddEduModal extends React.Component {
+class AddExpModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,13 +22,13 @@ class AddEduModal extends React.Component {
     render() {
         return(
             <div
-            className='add-edu-modal-container'>
+            className='add-exp-modal-container'>
                 <div
-                className='add-edu-modal-btn'
+                className='add-exp-modal-btn'
                 onClick={this.showModal}>
                     <img src={addBtn}></img>
                 </div>
-                <AddEduModalWindow
+                <AddexpModalWindow
                 show={this.state.show}
                 hide={this.hideModal}
                 submit={this.props.submit}/>
@@ -37,4 +37,4 @@ class AddEduModal extends React.Component {
         )
     }
 }
-export default AddEduModal;
+export default AddExpModal;

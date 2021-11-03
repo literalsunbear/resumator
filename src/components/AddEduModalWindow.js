@@ -1,7 +1,7 @@
 import React from 'react';
 
-import clearBtn from './static/images/clear_black_24dp.svg';
-import addBtn from './static/images/add_black_24dp.svg';
+import clearBtn from '../static/images/clear_black_24dp.svg';
+import addBtn from '../static/images/add_black_24dp.svg';
 
 class AddEduModalWindow extends React.Component {
     constructor(props) {
@@ -41,10 +41,11 @@ class AddEduModalWindow extends React.Component {
         this.props.hide();
     }
     render() {
-        const windowClassName = this.props.show ? 'add-edu-window display-block' : 'add-edu-window display-none';
         return(
             <div
-            className={windowClassName}>
+            className={this.props.show ?
+                        'add-edu-window display-block' :
+                        'add-edu-window display-none'}>
                 <p>add your education</p>
                 <input 
                 className='add-edu-window-input'
