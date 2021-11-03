@@ -1,40 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AddexpModalWindow from './AddExpModalWindow';
 
 import addBtn from '../static/images/add_black_24dp.svg';
 
-class AddExpModal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false
-        }
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+const AddExpModal = props => {
+    const [show, setShow] = useState(false)
+    const hideModal = () => {
+        setShow(false)
     }
-    showModal = () => {
-        this.setState({show: true});
-    };
-    hideModal = () => {
-        this.setState({show: false})
+    const showModal = () => {
+        setShow(true)
     }
-
-    render() {
-        return(
+    return(
+        <div
+        className='add-exp-modal-container'>
             <div
-            className='add-exp-modal-container'>
-                <div
-                className='add-exp-modal-btn'
-                onClick={this.showModal}>
-                    <img src={addBtn}></img>
-                </div>
-                <AddexpModalWindow
-                show={this.state.show}
-                hide={this.hideModal}
-                submit={this.props.submit}/>
+            className='add-exp-modal-btn'
+            onClick={showModal}>
+                <img src={addBtn}></img>
             </div>
-
-        )
-    }
+            <AddexpModalWindow
+            show={show}
+            hide={hideModal}
+            submit={props.submit}/>
+        </div>
+    )
 }
 export default AddExpModal;

@@ -1,20 +1,18 @@
 import React from 'react';
 
-class PreviewPage extends React.Component {
-    render() {       
-
-        return(
-            <div className='preview-page'>
+const PreviewPage = props => {     
+    return(
+        <div className='preview-page'>
             {/* rendered CV */}
             {/* name, title, avi */}
             <div
             className='preview-hero-container'>
-                <h1>{this.props.name}</h1>
-                <h2>{this.props.title}</h2>
+                <h1>{props.name}</h1>
+                <h2>{props.title}</h2>
                 <div
                 className='preview-hero-avi'
                 style={{ 
-                    backgroundImage: `url(${this.props.avi})`,
+                    backgroundImage: `url(${props.avi})`,
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover' }}></div>
@@ -30,7 +28,7 @@ class PreviewPage extends React.Component {
                         <h3>skills</h3>
                         <ul
                         className='preview-skills-list'>
-                            {this.props.skills.map(skill => {
+                            {props.skills.map(skill => {
                                 return(
                                     <li
                                     key={skill}
@@ -46,7 +44,7 @@ class PreviewPage extends React.Component {
                         <h3>technology</h3>
                         <ul
                         className='preview-tech-list'>
-                            {this.props.tech.map(tech => {
+                            {props.tech.map(tech => {
                                 return(
                                     <li
                                     key={tech}
@@ -64,22 +62,22 @@ class PreviewPage extends React.Component {
                     <div
                     className='preview-summary-container'>
                         <h3>summary</h3>
-                        <p>{this.props.summary}</p>
+                        <p>{props.summary}</p>
                     </div>
                     <div
                     className='preview-contact-container'>
                         <h3>contact</h3>
-                        <p>{this.props.addr1}</p>
-                        <p>{this.props.addr2}</p>
-                        <p>{this.props.phone}</p>
-                        <p>{this.props.email}</p>   
+                        <p>{props.addr1}</p>
+                        <p>{props.addr2}</p>
+                        <p>{props.phone}</p>
+                        <p>{props.email}</p>   
                     </div>
                     <div
                     className='preview-experience-container'>
                         <h3>experience</h3>
                         <ul
                         className='preview-exp-list'>
-                            {this.props.experience.map(exp => {
+                            {props.experience.map(exp => {
                                 return(
                                     <li
                                     key={exp.company}
@@ -105,7 +103,7 @@ class PreviewPage extends React.Component {
                         <h3>education</h3>
                         <ul
                         className='preview-exp-list'>
-                            {this.props.education.map(edu => {
+                            {props.education.map(edu => {
                                 return(
                                     <li
                                     key={edu.company}
@@ -132,6 +130,5 @@ class PreviewPage extends React.Component {
         </div>
         )
     }
-}
 
 export default PreviewPage;

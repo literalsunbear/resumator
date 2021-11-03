@@ -1,45 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import EditEduModalWindow from './EditEduModalWindow';
 
 import editBtn from '../static/images/edit_black_24dp.svg';
-
-class EditEduModal extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false
-        }
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
+const EditEduModal = props => {
+    const [show, setShow] = useState(false)
+    const hideModal = () => {
+        setShow(false)
     }
-    showModal = () => {
-        this.setState({show: true});
-    };
-    hideModal = () => {
-        this.setState({show: false})
+    const showModal = () => {
+        setShow(true)
     }
-
-    render() {
-        return(
+    return(
+        <div
+        className='edit-edu-modal-container'>
             <div
-            className='edit-edu-modal-container'>
-                <div
-                className='edit-edu-modal-btn'
-                onClick={this.showModal}>
-                    <img src={editBtn}></img>
-                </div>
-                <EditEduModalWindow
-                show={this.state.show}
-                hide={this.hideModal}
-                id={this.props.id}
-                institution={this.props.institution}
-                dates={this.props.dates}
-                degree={this.props.degree}
-                description={this.props.description}
-                submit={this.props.submit}/>
+            className='edit-edu-modal-btn'
+            onClick={showModal}>
+                <img src={editBtn}></img>
             </div>
-
-        )
-    }
+            <EditEduModalWindow
+            show={show}
+            hide={hideModal}
+            id={props.id}
+            institution={props.institution}
+            dates={props.dates}
+            degree={props.degree}
+            description={props.description}
+            submit={props.submit}/>
+        </div>
+    )
 }
 export default EditEduModal;

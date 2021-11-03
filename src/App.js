@@ -440,9 +440,9 @@ class App extends React.Component {
                                 className='edit-page-edu-item-btn-group'>
                                     <EditEduModal
                                     id={edu.id}
-                                    company={edu.institution}
-                                    title={edu.dates}
-                                    dates={edu.degree}
+                                    institution={edu.institution}
+                                    dates={edu.dates}
+                                    degree={edu.degree}
                                     description={edu.description}
                                     submit={this.handleEditEduSubmit}/>
                                     <div
