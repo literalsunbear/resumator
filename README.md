@@ -1,7 +1,7 @@
 # Res-U-Mator
 ## A browser-based CV editor built in React to specification per The Odin Project
 
-### Try it [here!](https://harrisonbarnett.github.io/resumator/)
+### Try it [here!](https://literalsunbear.github.io/resumator/)
 
 ### Simply fill out your information...
 ![](/src/static/images/example-2.png)
